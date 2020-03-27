@@ -195,7 +195,8 @@
                 <span>- Поиск по сайту</span>
             </div>
             <div class="header__line-title">
-                <div class="line-title--desc">«<span>20</span>-летний опыт работы. Более <span>57000</span> клиентов!»</div>
+                <div class="line-title--desc">«<span>20</span>-летний опыт работы. Более <span>57000</span> клиентов!»
+                </div>
                 <div class="line-title--mob">«<span>20</span>-летний опыт работы!»</div>
             </div>
             <div class="header__line-lang">
@@ -234,248 +235,289 @@
             <div class="breadcrumbs">
                 <ul>
                     <li><a href="#">Главная</a></li>
-                    <li class="current"><a href="#">Акции</a></li>
+                    <li><a href="#">Раздел</a></li>
+                    <li class="current"><a href="#">Услуга</a></li>
                 </ul>
             </div>
-    
-            <div class="stocks">
-                <div class="title">Акции бюро переводов Центральное</div>
-                <div class="inner">
-                    <p class="title-text">
-                        На этой страничке мы публикуем <span>рекомендательные письма</span> от компаний, ваших постоянных клиентов, а также от людей, которым мы помогли проставить апостиль, <span>перевести документы с нотариальным заверением</span> , получить визу и т.п.
-                    </p>
-                    <div class="select-wrap ">
-                        <label for="stocks">Тип акции <span>-</span></label>
-                        <div class="custom-select">
-                            <select id="stocks">
-                                <option value="1">Акции со скидкой</option>
-                                <option value="2">Saab</option>
-                                <option value="3">Opel</option>
-                                <option value="4">Audi</option>
-                            </select>
+
+            <section class="price">
+                <div class="wrapper">
+                    <div>
+                        <div class="price__title">Стоимость перевода</div>
+                        <p>Центральное бюро переводов Киев работает на рынке переводов уже 20 лет. Постоянный объем
+                            заказов и собственный штат переводчиков позволяют Вам предложить низкую
+                            стоимость следующих видов услуг:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Название услуги</th>
+                                    <th>Стоимость
+                                        <span>
+                                            <svg class="icon">
+                                                <use xlink:href="img/icons/sprite.svg#sort-icon"></use>
+                                            </svg>
+                                        </span>
+                                    </th>
+                                    <th>Сроки
+                                        <span>
+                                            <svg class="icon">
+                                                <use xlink:href="img/icons/sprite.svg#sort-icon"></use>
+                                            </svg>
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Нотариальное заверение перевода стандартного документа</td>
+                                    <td>120 грн</td>
+                                    <td>1 неделя</td>
+                                </tr>
+                                <tr>
+                                    <td>Нотариальная копия стандартного документа</td>
+                                    <td>120 грн</td>
+                                    <td>1 неделя</td>
+                                </tr>
+                                <tr>
+                                    <td>Нотариальное заверение копии и перевода паспорта</td>
+                                    <td>120 грн</td>
+                                    <td>1 неделя</td>
+                                </tr>
+                                <tr>
+                                    <td>Заверка документа печатью бюро переводов «Центральное»</td>
+                                    <td>120 грн</td>
+                                    <td>1 неделя</td>
+                                </tr>
+                                <tr>
+                                    <td>Сложное форматирование: вставка картинок, вёрстка</td>
+                                    <td>120 грн</td>
+                                    <td>1 неделя</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="price__calc">
+                            <div class="calc-controls">
+                                <div class="select-wrap ">
+                                    <div class="custom-select">
+                                        <select>
+                                            <option value="1">С языка</option>
+                                            <option value="2">Русский</option>
+                                            <option value="3">Английский</option>
+                                            <option value="4">Немецкий</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="select-wrap ">
+                                    <div class="custom-select">
+                                        <select>
+                                            <option value="1">С языка</option>
+                                            <option value="2">Русский</option>
+                                            <option value="3">Английский</option>
+                                            <option value="4">Немецкий</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="select-wrap ">
+                                    <div class="custom-select">
+                                        <select>
+                                            <option value="1">Кол-во строк</option>
+                                            <option value="2">Русский</option>
+                                            <option value="3">Английский</option>
+                                            <option value="4">Немецкий</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="select-wrap ">
+                                    <div class="custom-select">
+                                        <select>
+                                            <option value="1">Сложность</option>
+                                            <option value="2">Русский</option>
+                                            <option value="3">Английский</option>
+                                            <option value="4">Немецкий</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calc-result">
+                                <div>
+                                    <span>стоимость:</span>
+                                    <div class="calc-result__sum">
+                                        12 500 грн
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <div>
+                                    <span>сроки:</span>
+                                    <div class="calc-result__term">
+                                        2 дня
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Центральное бюро переводов Киев работает на рынке переводов уже 20 лет. Постоянный объем
+                            заказов и собственный штат переводчиков позволяют Вам предложить низкую
+                            стоимость следующих видов услуг:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Название услуги</th>
+                                    <th>Стоимость
+                                        <span>
+                                            <svg class="icon">
+                                                <use xlink:href="img/icons/sprite.svg#sort-icon"></use>
+                                            </svg>
+                                        </span>
+                                    </th>
+                                    <th>Сроки
+                                        <span>
+                                            <svg class="icon">
+                                                <use xlink:href="img/icons/sprite.svg#sort-icon"></use>
+                                            </svg>
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Нотариальное заверение перевода стандартного документа</td>
+                                    <td>120 грн</td>
+                                    <td>1 неделя</td>
+                                </tr>
+                                <tr>
+                                    <td>Нотариальная копия стандартного документа</td>
+                                    <td>120 грн</td>
+                                    <td>1 неделя</td>
+                                </tr>
+                                <tr>
+                                    <td>Нотариальное заверение копии и перевода паспорта</td>
+                                    <td>120 грн</td>
+                                    <td>1 неделя</td>
+                                </tr>
+                                <tr>
+                                    <td>Заверка документа печатью бюро переводов «Центральное»</td>
+                                    <td>120 грн</td>
+                                    <td>1 неделя</td>
+                                </tr>
+                                <tr>
+                                    <td>Сложное форматирование: вставка картинок, вёрстка</td>
+                                    <td>120 грн</td>
+                                    <td>1 неделя</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="price__pic">
+                            <img class="lazy"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/price-pic.jpg"
+                                data-srcset="img/@1x/price-pic.jpg 1x, img/@2x/price-pic.jpg 2x" alt="">
                         </div>
                     </div>
                 </div>
+
+            </section>
+            <section class="consult">
                 <div class="wrapper">
-                    <div class="stocks__item">
-                        <div>
-                            <div class="stocks__item-title">
-                                Бесплатная доставка документов Новой Почтой
-                            </div>
-                            <div class="stocks__item-pic--mob">
-                                <img class="lazy"
-                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-                                data-src="img/@1x/stocks-pic-1-mob.png"
-                                data-srcset="img/@1x/stocks-pic-1-mob.png 1x, img/@2x/stocks-pic-1-mob.png 2x" alt="">
-                                <div class="item-pic__shape lazy-background">
-                                    <span>free</span>
-                                </div>
-                            </div>
-                            <p>При оформлении заказа на сумму более 
-                                500 грн. мы отправим Ваши документы
-                                в удобное Вам отделение Новой Почты
-                                <b>бесплатно!</b></p>
-                            <a href="#">Подробнее</a>
+                    <div>
+                        <div class="consult__title">
+                            Быстрая оценка заказа
                         </div>
-                        <div>
-                            <div class="stocks__item-pic">
-                                <img class="lazy"
-                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-                                data-src="img/@1x/stocks-pic-1.png"
-                                data-srcset="img/@1x/stocks-pic-1.png 1x, img/@2x/stocks-pic-1.png 2x" alt="">
-                                <div class="item-pic__shape lazy-background">
-                                    <span>free</span>
+                        <div class="consult__tabs">
+                            <div class="tabs-nav">
+                                <div class="tabs-nav__item active" data-tab-name="tab-1">Оценить заказ</div>
+                                <div class="tabs-nav__item" data-tab-name="tab-2">Контакты</div>
+                                <div class="tabs-nav__item" data-tab-name="tab-3">Доставка</div>
+                                <div class="tabs-nav__item" data-tab-name="tab-4">Акции</div>
+                            </div>
+                            <div class="tabs-content">
+                                <div class="tabs-content__item active tab-1">
+                                    <div class="feedback__form">
+                                        <form>
+                                            <input type="text" placeholder="Ваше имя" class="form-input" required>
+                                            <input type="text" placeholder="Ваш e-mail" class="form-input" required>
+                                            <textarea placeholder="Ваше сообщение"></textarea>
+                                            <div class="field">
+                                                <input type="file" name="file-1[]" id="file-1"
+                                                    class="inputfile visually-hidden"
+                                                    data-multiple-caption="{count} files selected" multiple />
+                                                <label for="file-1" class="inputfile-custom">
+                                                    <span>Файл не выбран</span>
+                                                </label>
+                                            </div>
+                                            <button class="btn" data-text="Отправить">Отправить</button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="stocks__item">
-                        <div>
-                            <div class="stocks__item-title">
-                                Скидка 5% за ссылку на форуме или в соц.сети
-                            </div>
-                            <div class="stocks__item-pic--mob">
-                                <img class="lazy"
-                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-                                data-src="img/@1x/stocks-pic-2-mob.png"
-                                data-srcset="img/@1x/stocks-pic-2-mob.png 1x, img/@2x/stocks-pic-2-mob.png 2x" alt="">
-                                <div class="item-pic__shape lazy-background">
-                                    <span>5%</span>
+                                <div class="tabs-content__item tab-2">
+                                    <div class="feedback__contacts">
+                                        <div class="feedback__contacts-wrap">
+                                            <p class="contacts-field__title">Телефоны:</p>
+                                            <div class="contacts-field">
+                                                <div class="contacts-field__phone">
+                                                    <svg class="icon">
+                                                        <use xlink:href="img/icons/sprite.svg#phone"></use>
+                                                    </svg>
+                                                    <a href="tel:380443531530">(044) 353-15-30</a>
+                                                    <a href="tel:380503223393">(050) 322-33-93</a>
+                                                </div>
+                                                <div class="contacts-field__phone">
+                                                    <svg class="icon">
+                                                        <use xlink:href="img/icons/sprite.svg#phone"></use>
+                                                    </svg>
+                                                    <a href="tel:380633224411">(063) 322-44-11</a>
+                                                    <a href="tel:380673226711">(067) 322-67-11</a>
+                                                </div>
+                                            </div>
+                                            <div class="contacts-divider"></div>
+                                            <p class="contacts-field__title">Почта:</p>
+                                            <div class="contacts-field__mail">
+                                                <svg class="icon">
+                                                    <use xlink:href="img/icons/sprite.svg#mail"></use>
+                                                </svg>
+                                                <a href="mail:info@bpcenter.com.ua">info@bpcenter.com.ua</a>
+                                            </div>
+                                            <div class="contacts-divider"></div>
+                                            <p class="contacts-field__title">Адрес:</p>
+                                            <div class="contacts-field__address">
+                                                <svg class="icon">
+                                                    <use xlink:href="img/icons/sprite.svg#gps"></use>
+                                                </svg>
+                                                <span>г.Киев, ул.Б.Гринченко 4 3-й этаж,<br>
+                                                    офис 6 (м. Майдан Незалежностi)</span>
+                                            </div>
+
+                                        </div>
+                                        <a href="#" class="btn">Посмотреть на карте</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <p>Оставьте активную (кликабельную) ссылку
-                                на наш сайт на тематическом форуме или на своей странице в соц. сети и получите 
-                                <b>скидку 5%</b> при оформлении заказа!</p>
-                            <a href="#">Подробнее</a>
-                        </div>
-                        <div>
-                            <div class="stocks__item-pic">
-                                <img class="lazy"
-                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-                                data-src="img/@1x/stocks-pic-2.png"
-                                data-srcset="img/@1x/stocks-pic-2.png 1x, img/@2x/stocks-pic-2.png 2x" alt="">
-                                <div class="item-pic__shape lazy-background">
-                                    <span>5%</span>
+                                <div class="tabs-content__item tab-3">
+                                    Доставка
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="stocks__item">
-                        <div>
-                            <div class="stocks__item-title">
-                                Приятный подарок каждому клиенту
-                            </div>
-                            <div class="stocks__item-pic--mob">
-                                <img class="lazy"
-                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-                                data-src="img/@1x/stocks-pic-3-mob.png"
-                                data-srcset="img/@1x/stocks-pic-3-mob.png 1x, img/@2x/stocks-pic-3-mob.png 2x" alt="">
-                                <div class="item-pic__shape lazy-background">
-                                    <span>15%</span>
-                                </div>
-                            </div>
-                            <p>Каждому клиенту, сделавшему у нас заказ, 
-                                мы дарим небольшой, но очень симпатичный
-                                подарок - <b>винтажную папку для бумаг</b> от 
-                                бюро переводов Центральное!</p>
-                            <a href="#">Подробнее</a>
-                        </div>
-                        <div>
-                            <div class="stocks__item-pic">
-                                <img class="lazy"
-                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-                                data-src="img/@1x/stocks-pic-3.png"
-                                data-srcset="img/@1x/stocks-pic-3.png 1x, img/@2x/stocks-pic-3.png 2x" alt="">
-                                <div class="item-pic__shape lazy-background">
-                                    <span>15%</span>
+                                <div class="tabs-content__item tab-4">
+                                    Акции
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="stocks__item">
-                        <div>
-                            <div class="stocks__item-title">
-                                Скидка 5% за отзыв о нашей работе
-                            </div>
-                            <div class="stocks__item-pic--mob">
-                                <img class="lazy"
+                    <div>
+                        <div class="consult__pic">
+                            <img class="lazy"
                                 src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-                                data-src="img/@1x/stocks-pic-4-mob.png"
-                                data-srcset="img/@1x/stocks-pic-4-mob.png 1x, img/@2x/stocks-pic-4-mob.png 2x" alt="">
-                                <div class="item-pic__shape lazy-background">
-                                    <span>free</span>
-                                </div>
-                            </div>
-                            <p>Если Вам понравилась наша работа, 
-                                оставьте отзыв о нашей работе в Гугле 
-                                или Фейсбуке и получите <b>скидку 5%</b>
-                                на следующий заказ!
-                                    </p>
-                            <a href="#">Подробнее</a>
-                        </div>
-                        <div>
-                            <div class="stocks__item-pic">
-                                <img class="lazy"
-                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-                                data-src="img/@1x/stocks-pic-4.png"
-                                data-srcset="img/@1x/stocks-pic-4.png 1x, img/@2x/stocks-pic-4.png 2x" alt="">
-                                <div class="item-pic__shape lazy-background">
-                                    <span>free</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <section class="feedback">
-                <div class="wrapper">
-                    <div class="feedback__card feedback__card-bg">
-                        <div class="title">Оценка заказа</div>
-                        <p class="subtitle">Перевод сделан быстро и нотариально заверен, справка о несудимости была
-                            готова даже раньше оговорённого срока. </p>
-                        <div class="feedback__form">
-                            <form>
-                                <div class="feedback-card__title">
-                                    <span>Оценить заказ</span>
-                                    <svg class="icon">
-                                        <use xlink:href="img/icons/sprite.svg#chat-icon"></use>
-                                    </svg>
-                                </div>
-                                <input type="text" placeholder="Ваше имя" class="form-input" required>
-                                <input type="text" placeholder="Ваш e-mail" class="form-input" required>
-                                <textarea placeholder="Ваше сообщение"></textarea>
-                                <div class="field">
-                                    <input type="file" name="file-1[]" id="file-1" class="inputfile visually-hidden"
-                                        data-multiple-caption="{count} files selected" multiple />
-                                    <label for="file-1" class="inputfile-custom">
-                                        <span>Файл не выбран</span>
-                                    </label>
-                                </div>
-                                <button class="btn" data-text="Отправить">Отправить</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="feedback__card feedback__card-bg">
-                        <div class="title">Контакты</div>
-                        <p class="subtitle">Перевод сделан быстро и нотариально заверен, справка о несудимости была
-                            готова даже раньше оговорённого срока.</p>
-                        <div class="feedback__contacts">
-                            <div class="feedback-card__title">
-                                <span>Способы связи с нами</span>
+                                data-src="img/@1x/consult-pic.jpg"
+                                data-srcset="img/@1x/consult-pic.jpg 1x, img/@2x/consult-pic.jpg 2x" alt="">
+                            <div class="consult__pic-icon lazy-background">
                                 <svg class="icon">
-                                    <use xlink:href="img/icons/sprite.svg#location-icon"></use>
+                                    <use xlink:href="img/icons/sprite.svg#calculator"></use>
                                 </svg>
                             </div>
-                            <div class="feedback__contacts-wrap">
-                                <p class="contacts-field__title">Телефоны:</p>
-                                <div class="contacts-field">
-                                    <div class="contacts-field__phone">
-                                        <svg class="icon">
-                                            <use xlink:href="img/icons/sprite.svg#phone"></use>
-                                        </svg>
-                                        <a href="tel:380443531530">(044) 353-15-30</a>
-                                        <a href="tel:380503223393">(050) 322-33-93</a>
-                                    </div>
-                                    <div class="contacts-field__phone">
-                                        <svg class="icon">
-                                            <use xlink:href="img/icons/sprite.svg#phone"></use>
-                                        </svg>
-                                        <a href="tel:380633224411">(063) 322-44-11</a>
-                                        <a href="tel:380673226711">(067) 322-67-11</a>
-                                    </div>
-                                </div>
-                                <div class="contacts-divider"></div>
-                                <p class="contacts-field__title">Почта:</p>
-                                <div class="contacts-field__mail">
-                                    <svg class="icon">
-                                        <use xlink:href="img/icons/sprite.svg#mail"></use>
-                                    </svg>
-                                    <a href="mail:info@bpcenter.com.ua">info@bpcenter.com.ua</a>
-                                </div>
-                                <div class="contacts-divider"></div>
-                                <p class="contacts-field__title">Адрес:</p>
-                                <div class="contacts-field__address">
-                                    <svg class="icon">
-                                        <use xlink:href="img/icons/sprite.svg#gps"></use>
-                                    </svg>
-                                    <span>г.Киев, ул.Б.Гринченко 4 3-й этаж,<br>
-                                        офис 6 (м. Майдан Незалежностi)</span>
-                                </div>
-
-                            </div>
-                            <a href="#" class="btn">Посмотреть на карте</a>
                         </div>
                     </div>
                 </div>
             </section>
-    
-            <section class="chat">
-                <div class="chat__banner lazy-background">
-                    <p>Присоединиться к обсуждению</p>
-                </div>
-            </section>
+
         </div>
+
     </main>
 
     <footer class="footer">
@@ -492,7 +534,7 @@
                             <a href="#">Переводы Переводы 1</a>
                         </div>
                     </div>
-    
+
                     <div class="footer__item">
                         <div class="footer__item-btn--js footer__item-title"><span>Получение документов</span></div>
                         <div class="footer__item-list">
@@ -500,7 +542,7 @@
                             <a href="#">Легализация, апостиль</a>
                         </div>
                     </div>
-    
+
                     <div class="footer__item">
                         <div class="footer__item-title"><a href="#">Цены</a></div>
                     </div>
@@ -513,7 +555,7 @@
                             <a href="#">Легализация, апостиль</a>
                         </div>
                     </div>
-    
+
                     <div class="footer__item">
                         <div class="footer__item-btn--js footer__item-title"><span>Легализация, апостиль</span></div>
                         <div class="footer__item-list">
@@ -521,7 +563,7 @@
                             <a href="#">Легализация, апостиль</a>
                         </div>
                     </div>
-    
+
                     <div class="footer__item">
                         <div class="footer__item-btn--js footer__item-title"><span>Документы для посольств</span></div>
                         <div class="footer__item-list">
@@ -534,11 +576,11 @@
                     <div class="footer__item">
                         <div class="footer__item-title"><a href="#">Полезные советы</a></div>
                     </div>
-    
+
                     <div class="footer__item">
                         <div class="footer__item-title"><a href="#">Нас рекомендуют</a></div>
                     </div>
-    
+
                     <div class="footer__item">
                         <div class="footer__item-btn--js footer__item-title"><span>Визовая поддержка</span></div>
                         <div class="footer__item-list">
@@ -555,11 +597,11 @@
                             <a href="#">Легализация, апостиль</a>
                         </div>
                     </div>
-    
+
                     <div class="footer__item">
                         <div class="footer__item-title"><a href="#">Информация партнерам</a></div>
                     </div>
-    
+
                     <div class="footer__item">
                         <div class="footer__item-title"><a href="#"><strong>Работаем со всей Украиной!</strong></a>
                         </div>
