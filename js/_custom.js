@@ -61,15 +61,19 @@ document.addEventListener("DOMContentLoaded", function () {
 				slidesPerView: 1,
 				spaceBetween: 0
 			},
-			375: {
-				slidesPerView: 1,
-				spaceBetween: 0
-			},
 			500: {
+				slidesPerView: 2,
+				spaceBetween: 15
+			},
+			600: {
 				slidesPerView: 3,
 				spaceBetween: 15
 			},
-			768: {
+			730: {
+				slidesPerView: 4,
+				spaceBetween: 15
+			},
+			900: {
 				slidesPerView: 5,
 				spaceBetween: 15
 			},
@@ -152,45 +156,67 @@ document.addEventListener("DOMContentLoaded", function () {
 		headContBar = document.querySelector('.header__contacts-bar'),
 		headContWrap = document.querySelector('.header__contacts-wrap'),
 		substrate = document.querySelector('.substrate'),
-		menuSubLink = document.querySelector('.menu-bar__sub-link'),
-		menuSubList = document.querySelector('.header__menu-sub'),
-		modalBtn = document.querySelector('.modal-open-btn'),
-		modalContent = document.querySelector('.modal-wrap'),
-		modalCloseBtn = document.querySelector('.modal-close-btn'),
+		modalButtons = document.querySelectorAll('.modal-open-btn'),
+		overlay      = document.querySelector('.modal-overlay'),
+		closeButtons = document.querySelectorAll('.modal-close-btn');
 		body = document.body;
 
 
-	let openModal = function () {
-		modalContent.classList.toggle('active');
-		body.classList.toggle('over-hide');
-	};
-	if (modalBtn) {
-		modalBtn.addEventListener('click', openModal);
-	};
-		
-	let closeModal = function () {
-		modalContent.classList.remove('active');
-		body.classList.remove('over-hide');
-	};
-	if (modalCloseBtn) {
-		modalCloseBtn.addEventListener('click', closeModal);
-	};
 
-	window.onclick = function (event) {
-		if (event.target == modalContent) {
-			modalContent.classList.remove('active');
+	/*****modals */
+	modalButtons.forEach(function(item){
+		/* Назначаем каждой кнопке обработчик клика */
+		item.addEventListener('click', function(e) {
+			/* Предотвращаем стандартное действие элемента. Так как кнопку разные
+			люди могут сделать по-разному. Кто-то сделает ссылку, кто-то кнопку.
+			Нужно подстраховаться. */
+			e.preventDefault();
+			/* При каждом клике на кнопку мы будем забирать содержимое атрибута data-modal
+			и будем искать модальное окно с таким же атрибутом. */
+			var modalId = this.getAttribute('data-modal'),
+				modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
+			/* После того как нашли нужное модальное окно, добавим классы
+			подложке и окну чтобы показать их. */
+			modalElem.classList.add('active');
+			overlay.classList.add('active');
+			body.classList.add('over-hide');
+		}); // end click
+
+	}); // end foreach
+
+
+	closeButtons.forEach(function(item){
+
+		item.addEventListener('click', function(e) {
+			var parentModal = this.closest('.modal');
+
+			parentModal.classList.remove('active');
+			overlay.classList.remove('active');
 			body.classList.remove('over-hide');
-		}
-	};
+		});
+
+	}); // end foreach
 
 
+	document.body.addEventListener('keyup', function (e) {
+		var key = e.keyCode;
 
-	if (window.screen.width <= 1600) {
-		menuSubLink.addEventListener('click', event => {
-			menuSubList.classList.toggle('active');
+		if (key == 27) {
+
+			document.querySelector('.modal.active').classList.remove('active');
+			document.querySelector('.modal-overlay').classList.remove('active');
+			body.classList.remove('over-hide');
+		};
+	}, false);
+
+	if(overlay) {
+		overlay.addEventListener('click', function() {
+			document.querySelector('.modal.active').classList.remove('active');
+			this.classList.remove('active');
+			body.classList.remove('over-hide');
 		});
 	};
-
+	/*****end modal */
 
 	let openMenu = function () {
 		menuBtn.classList.toggle('active');
@@ -230,7 +256,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 
 	substrate.addEventListener('click', closeContact);
+
 	headContBtnClose.addEventListener('click', closeContact);
+
 	/*****header search form */
 	if (headSearchBtn) {
 		headSearchBtn.addEventListener('click', event => {
@@ -241,83 +269,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	window.addEventListener('keydown', event => {
 		if (event.keyCode === 27) closeMenu(event)
 	});
-
-
-
-
-	/*header contacts bar*/
-	/*if (headContBtn) {
-			headContBtn.addEventListener('click', event => {
-				headContBar.classList.toggle('active');
-				headContBtn.classList.toggle('active');
-				headContWrap.classList.toggle('active');
-				substrate.classList.toggle('active');
-				body.classList.toggle('over-hide');
-			});
-		};
-
-	/*****header search form */
-	/*if (headSearchBtn) {
-		headSearchBtn.addEventListener('click', event => {
-			headSearchForm.classList.toggle('active');
-		});
-	};
-
-
-	/*mobile menu*/
-	/*if (menuBtn) {
-		menuBtn.addEventListener('click', event => {
-			menuBtn.classList.toggle('active');
-			menuBar.classList.toggle('active');
-			menuZindex.classList.toggle('active');
-			substrate.classList.toggle('active');
-			body.classList.toggle('over-hide');
-		});
-	};*/
-
-
-
-
-
-	/*	window.addEventListener('keydown', event => {
-
-			if (menuBar.classList.contains('active') && event.keyCode === 27) {
-				menuBar.classList.remove('active');
-				menuBtn.classList.remove('active');
-				menuZindex.classList.remove('active');
-				body.classList.remove('over-hide');
-				substrate.classList.remove('active');
-			};
-			if (headSearchForm.classList.contains('active') && event.keyCode === 27) {
-				headSearchForm.classList.remove('active');
-			};
-			if (headContBar.classList.contains('active') && event.keyCode === 27) {
-				headContBar.classList.remove('active');
-				headContWrap.classList.remove('active');
-				headContBtn.classList.remove('active');
-				body.classList.remove('over-hide');
-				substrate.classList.remove('active');
-			};
-		});
-		substrate.addEventListener('click', event => {
-
-			if (menuBar.classList.contains('active')) {
-				menuBtn.classList.remove('active');
-				menuBar.classList.remove('active');
-				menuZindex.classList.remove('active');
-				substrate.classList.remove('active');
-				body.classList.remove('over-hide');
-
-			};
-			if (headContBar.classList.contains('active')) {
-				headContBar.classList.remove('active');
-				headContWrap.classList.remove('active');
-				headContBtn.classList.remove('active');
-				body.classList.remove('over-hide');
-				substrate.classList.remove('active');
-			};
-		});
-	*/
 
 
 	/****language drop list */
@@ -333,6 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
 					return;
 				}
 				target = target.parentNode;
+				
 			}
 			menuElem.classList.remove('open');
 		}
@@ -435,4 +387,64 @@ document.addEventListener("DOMContentLoaded", function () {
 		$('.desc-card__text-subtitle').after($('.desc-card__document'));
 	};
 
+
+	/******drop down list for header menu ********/
+
+	// .classList() Polyfill for older browser - IE9 again...
+	!function(){function t(t){this.element=t}var e=function(t){return RegExp("(^| )"+t+"( |$)")},n=function(t,e,n){for(var i=0;i<t.length;i++)e.call(n,t[i])}
+	t.prototype={add:function(){n(arguments,function(t){this.contains(t)||(this.element.className+=" "+t)},this)},remove:function(){n(arguments,function(t){this.element.className=this.element.className.replace(e(t),"")},this)},toggle:function(t){return this.contains(t)?(this.remove(t),!1):(this.add(t),!0)},contains:function(t){return e(t).test(this.element.className)},replace:function(t,e){this.remove(t),this.add(e)}},"classList"in Element.prototype||Object.defineProperty(Element.prototype,"classList",{get:function(){return new t(this)}}),window.DOMTokenList&&null==DOMTokenList.prototype.replace&&(DOMTokenList.prototype.replace=t.prototype.replace)}()
+
+	// .closest() Polyfill for browsers that supports document.querySelectorAll() - IE9 again...
+	if (window.Element && !Element.prototype.closest) {
+	    Element.prototype.closest =
+	    function(s) {
+	        var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+	            i,
+	            el = this;
+	        do {
+	            i = matches.length;
+	            while (--i >= 0 && matches.item(i) !== el) {};
+	        } while ((i < 0) && (el = el.parentElement));
+	        return el;
+	    };
+	}
+
+	// Dropdown Select Toggle
+	var activeClass = "active";
+	var forEach = function (array, callback, scope) {
+		for (var i = 0; i < array.length; i++) {
+			callback.call(scope, i, array[i]); // passes back stuff we need from the array
+		}
+	};
+	forEach(document.querySelectorAll(".header__menu-bar .menu-bar__sub-link"), function (index, value) {
+		value.addEventListener('click', function() {
+	        //console.log(value.classList);
+	        if ( !value.classList.contains(activeClass) ) {
+	            var el = document.querySelectorAll(".header__menu-bar .menu-bar__sub-link");
+	            var i; for (i = 0; i < el.length; i++) {
+	                el[i].classList.remove(activeClass);
+	            }
+	            value.classList.toggle(activeClass);
+	        } else
+	        if ( value.classList.contains(activeClass) ) {
+	            value.classList.remove(activeClass);
+	        }
+		})
+	});
+	document.addEventListener('click', function(e) {
+		// Dropdown Select Toggle
+		var el = document.querySelectorAll(".header__menu-bar .menu-bar__sub-link")
+		var e=e? e : window.event;
+	    var event_element=e.target? e.target : e.srcElement;
+		if (!event_element.closest(".menu-bar__sub-link")){
+			//console.log(event_element.closest(".dropdown_list"));
+			var i; for (i = 0; i < el.length; i++) {
+				el[i].classList.remove(activeClass);
+			}
+		}
+	}, false);
+
 });
+
+
+

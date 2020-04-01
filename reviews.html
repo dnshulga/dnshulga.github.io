@@ -440,7 +440,54 @@
                     <div class="reviews__block">
                         <div class="reviews__block-head">
                             <div class="title">Отзывы</div>
-                            <a href="#" class="reviews__block-link">Оставить отзыв</a>
+                            <a href="#" class="reviews__block-link modal-open-btn" data-modal="reviews-form-modal">Оставить отзыв</a>
+                            <div class="modal" data-modal="reviews-form-modal">
+                                <div class="modal-content">
+                                    <div class="modal-close-btn">
+                                        <svg class="icon">
+                                            <use xlink:href="img/icons/sprite.svg#btn-close"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="reviews__form">
+                                        <div class="title">Оставить отзыв</div>
+                                        <div class="reviews__form-icon">
+                                            <svg class="icon">
+                                                <use xlink:href="img/icons/sprite.svg#chat-icon"></use>
+                                            </svg>
+                                        </div>
+                                        <p>Ваш e-mail не будет опубликован</p>
+                                        <form>
+                                            <input type="text" placeholder="Ваше имя" class="form-input" required>
+                                            <input type="text" placeholder="Ваш e-mail" class="form-input" required>
+                                            <textarea placeholder="Текст отзыва"></textarea>
+                                            <div class="reviews__form-wrap">
+                                                <div class="rating__group">
+                                                    <input class="rating__star" type="radio" name="rating3" value="1"
+                                                        aria-label="Ужасно" checked>
+                                                    <input class="rating__star" type="radio" name="rating3" value="2"
+                                                        aria-label="Сносно" checked>
+                                                    <input class="rating__star" type="radio" name="rating3" value="3"
+                                                        aria-label="Нормально" checked>
+                                                    <input class="rating__star" type="radio" name="rating3" value="4"
+                                                        aria-label="Хорошо" checked>
+                                                    <input class="rating__star" type="radio" name="rating3" value="5"
+                                                        aria-label="Отлично" checked>
+                                                </div>
+                                                <div class="field">
+                                                    <input type="file" name="file-1[]" id="file-1" class="inputfile visually-hidden"
+                                                        data-multiple-caption="{count} files selected" multiple />
+                                                    <label for="file-1" class="inputfile-custom">
+                                                        <span>Загрузить аватарку -</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <button class="btn" data-text="Отправить">Отправить</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Подложка под модальным окном -->
+                            <div class="modal-overlay"></div>
                         </div>
                         <div class="reviews__item">
                             <div>
@@ -563,7 +610,11 @@
                         <div class="reviews__pagination">
                             <span class="current"><a href="#">1</a></span>
                             <span><a href="#">2</a></span>
-                            <span class="last"><a href="#">3</a></span>
+                            <span><a href="#">3</a></span>
+                            <span><a href="#">4</a></span>
+                            <span><a href="#">5</a></span>
+                            <i>...</i>
+                            <span class="last current"><a href="#">25</a></span>
                         </div>
                     </div>
                     <div>
@@ -579,13 +630,13 @@
                                         <input class="rating__star" type="radio" name="rating3" value="1"
                                             aria-label="Ужасно" checked>
                                         <input class="rating__star" type="radio" name="rating3" value="2"
-                                            aria-label="Сносно">
+                                            aria-label="Сносно" checked>
                                         <input class="rating__star" type="radio" name="rating3" value="3"
-                                            aria-label="Нормально">
+                                            aria-label="Нормально" checked>
                                         <input class="rating__star" type="radio" name="rating3" value="4"
-                                            aria-label="Хорошо">
+                                            aria-label="Хорошо" checked>
                                         <input class="rating__star" type="radio" name="rating3" value="5"
-                                            aria-label="Отлично">
+                                            aria-label="Отлично" checked>
                                     </div>
                                     <div class="field">
                                         <input type="file" name="file-1[]" id="file-1" class="inputfile visually-hidden"

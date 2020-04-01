@@ -931,8 +931,8 @@
                     </p>
                 </div>
                 <div>
-                    <div class="desc-card__document">
-                        <div class="document-icon modal-open-btn">
+                    <div class="desc-card__document desc-card__document--desctop">
+                        <div class="document-icon modal-open-btn" data-modal="doc-modal">
                             <svg class="icon">
                                 <use xlink:href="img/icons/sprite.svg#eye-icon"></use>
                             </svg>
@@ -949,55 +949,265 @@
                                 data-src="img/@1x/document2.jpg"
                                 data-srcset="img/@1x/document2.jpg 1x, img/@2x/document2.jpg 2x" alt="">
                         </div>
-                        <div class="modal-wrap">
-                            <div class="modal-content">
-                                <img class="lazy"
-                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-                                    data-src="img/@1x/document-modal.jpg"
-                                    data-srcset="img/@1x/document-modal.jpg 1x, img/@2x/document-modal.jpg 2x" alt="">
-                                <div class="modal-close-btn">
-                                    <svg class="icon">
-                                        <use xlink:href="img/icons/sprite.svg#btn-close"></use>
-                                    </svg>
-                                </div>
-                                <div class="document-angle document-angle--t_r">
-                                    <img src="img/icons/angle-t-r-desc.svg" alt="" class="document-angle--desc">
-                                    <img src="img/icons/angle-t-r--mob.svg" alt="" class="document-angle--mob">
-                                </div>
-                                <div class="document-angle document-angle--t_l">
-                                    <img src="img/icons/angle-t-l-desc.svg" alt="" class="document-angle--desc">
-                                    <img src="img/icons/angle-t-l--mob.svg" alt="" class="document-angle--mob">
-                                </div>
-                                <div class="document-angle document-angle--b_r">
-                                    <img src="img/icons/angle-b-r-desc.svg" alt="" class="document-angle--desc">
-                                    <img src="img/icons/angle-b-r--mob.svg" alt="" class="document-angle--mob">
-                                </div>
-                                <div class="document-angle document-angle--b_l">
-                                    <img src="img/icons/angle-b-l-desc.svg" alt="" class="document-angle--desc">
-                                    <img src="img/icons/angle-b-l--mob.svg" alt="" class="document-angle--mob">
-                                </div>
-                            </div>
-                        </div>
                         <div class="document-angle document-angle--t_r">
-                            <img src="img/icons/angle-t-r-desc.svg" alt="" class="document-angle--desc">
-                            <img src="img/icons/angle-t-r--mob.svg" alt="" class="document-angle--mob">
+                            <img class="lazy document-angle--desc"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-t-r-desc.png"
+                                data-srcset="img/@1x/angle-t-r-desc.png 1x, img/@2x/angle-t-r-desc.png 2x" alt="">
+                            <img class="lazy document-angle--mob"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-t-r-mob.png"
+                                data-srcset="img/@1x/angle-t-r-mob.png 1x, img/@2x/angle-t-r-mob.png 2x" alt="">
                         </div>
                         <div class="document-angle document-angle--t_l">
-                            <img src="img/icons/angle-t-l-desc.svg" alt="" class="document-angle--desc">
-                            <img src="img/icons/angle-t-l--mob.svg" alt="" class="document-angle--mob">
+                            <img class="lazy document-angle--desc"
+                            src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                            data-src="img/@1x/angle-t-l-desc.png"
+                            data-srcset="img/@1x/angle-t-l-desc.png 1x, img/@2x/angle-t-l-desc.png 2x" alt="">
+                            <img class="lazy document-angle--mob"
+                            src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                            data-src="img/@1x/angle-t-l-mob.png"
+                            data-srcset="img/@1x/angle-t-l-mob.png 1x, img/@2x/angle-t-l-mob.png 2x" alt="">
                         </div>
                         <div class="document-angle document-angle--b_r">
-                            <img src="img/icons/angle-b-r-desc.svg" alt="" class="document-angle--desc">
-                            <img src="img/icons/angle-b-r--mob.svg" alt="" class="document-angle--mob">
+                            <img class="lazy document-angle--desc"
+                            src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                            data-src="img/@1x/angle-b-r-desc.png"
+                            data-srcset="img/@1x/angle-b-r-desc.png 1x, img/@2x/angle-b-r-desc.png 2x" alt="">
+                        <img class="lazy document-angle--mob"
+                            src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                            data-src="img/@1x/angle-b-r-mob.png"
+                            data-srcset="img/@1x/angle-b-r-mob.png 1x, img/@2x/angle-b-r-mob.png 2x" alt="">
                         </div>
                         <div class="document-angle document-angle--b_l">
-                            <img src="img/icons/angle-b-l-desc.svg" alt="" class="document-angle--desc">
-                            <img src="img/icons/angle-b-l--mob.svg" alt="" class="document-angle--mob">
+                            <img class="lazy document-angle--desc"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-b-l-desc.png"
+                                data-srcset="img/@1x/angle-b-l-desc.png 1x, img/@2x/angle-b-l-desc.png 2x" alt="">
+                            <img class="lazy document-angle--mob"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-b-l-mob.png"
+                                data-srcset="img/@1x/angle-b-l-mob.png 1x, img/@2x/angle-b-l-mob.png 2x" alt="">
                         </div>
                     </div>
+                    <div class="desc-card__document desc-card__document--mob">
+                        <div class="document-block__wrap">
+                            <div class="document-block">
+                                <img class="lazy"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/document1.jpg"
+                                    data-srcset="img/@1x/document1.jpg 1x, img/@2x/document1.jpg 2x" alt="">
+                            </div>
+                            <div class="document-icon modal-open-btn" data-modal="doc-modal">
+                                <svg class="icon">
+                                    <use xlink:href="img/icons/sprite.svg#eye-icon"></use>
+                                </svg>
+                            </div>
+                            <div class="document-angle document-angle--t_r">
+                                <img class="lazy document-angle--desc"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-t-r-desc.png"
+                                    data-srcset="img/@1x/angle-t-r-desc.png 1x, img/@2x/angle-t-r-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-t-r-mob.png"
+                                    data-srcset="img/@1x/angle-t-r-mob.png 1x, img/@2x/angle-t-r-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--t_l">
+                                <img class="lazy document-angle--desc"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-t-l-desc.png"
+                                data-srcset="img/@1x/angle-t-l-desc.png 1x, img/@2x/angle-t-l-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-t-l-mob.png"
+                                data-srcset="img/@1x/angle-t-l-mob.png 1x, img/@2x/angle-t-l-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--b_r">
+                                <img class="lazy document-angle--desc"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-b-r-desc.png"
+                                data-srcset="img/@1x/angle-b-r-desc.png 1x, img/@2x/angle-b-r-desc.png 2x" alt="">
+                            <img class="lazy document-angle--mob"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-b-r-mob.png"
+                                data-srcset="img/@1x/angle-b-r-mob.png 1x, img/@2x/angle-b-r-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--b_l">
+                                <img class="lazy document-angle--desc"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-b-l-desc.png"
+                                    data-srcset="img/@1x/angle-b-l-desc.png 1x, img/@2x/angle-b-l-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-b-l-mob.png"
+                                    data-srcset="img/@1x/angle-b-l-mob.png 1x, img/@2x/angle-b-l-mob.png 2x" alt="">
+                            </div>
+                        </div>
+                        <div class="document-block__wrap">
+                            <div class="document-block">
+                                <img class="lazy"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/document2.jpg"
+                                    data-srcset="img/@1x/document2.jpg 1x, img/@2x/document2.jpg 2x" alt="">
+                            </div>
+                            <div class="document-icon modal-open-btn" data-modal="doc-modal-2">
+                                <svg class="icon">
+                                    <use xlink:href="img/icons/sprite.svg#eye-icon"></use>
+                                </svg>
+                            </div>
+                            <div class="document-angle document-angle--t_r">
+                                <img class="lazy document-angle--desc"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-t-r-desc.png"
+                                    data-srcset="img/@1x/angle-t-r-desc.png 1x, img/@2x/angle-t-r-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-t-r-mob.png"
+                                    data-srcset="img/@1x/angle-t-r-mob.png 1x, img/@2x/angle-t-r-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--t_l">
+                                <img class="lazy document-angle--desc"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-t-l-desc.png"
+                                data-srcset="img/@1x/angle-t-l-desc.png 1x, img/@2x/angle-t-l-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-t-l-mob.png"
+                                data-srcset="img/@1x/angle-t-l-mob.png 1x, img/@2x/angle-t-l-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--b_r">
+                                <img class="lazy document-angle--desc"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-b-r-desc.png"
+                                data-srcset="img/@1x/angle-b-r-desc.png 1x, img/@2x/angle-b-r-desc.png 2x" alt="">
+                            <img class="lazy document-angle--mob"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-b-r-mob.png"
+                                data-srcset="img/@1x/angle-b-r-mob.png 1x, img/@2x/angle-b-r-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--b_l">
+                                <img class="lazy document-angle--desc"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-b-l-desc.png"
+                                    data-srcset="img/@1x/angle-b-l-desc.png 1x, img/@2x/angle-b-l-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-b-l-mob.png"
+                                    data-srcset="img/@1x/angle-b-l-mob.png 1x, img/@2x/angle-b-l-mob.png 2x" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" data-modal="doc-modal">
+                        <div class="modal-content">
+                            <img class="lazy"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/document-modal.jpg"
+                                data-srcset="img/@1x/document-modal.jpg 1x, img/@2x/document-modal.jpg 2x" alt="">
+                            <div class="modal-close-btn">
+                                <svg class="icon">
+                                    <use xlink:href="img/icons/sprite.svg#btn-close"></use>
+                                </svg>
+                            </div>
+                            <div class="document-angle document-angle--t_r">
+                                <img class="lazy document-angle--desc"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-t-r-desc.png"
+                                    data-srcset="img/@1x/angle-t-r-desc.png 1x, img/@2x/angle-t-r-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-t-r-mob.png"
+                                    data-srcset="img/@1x/angle-t-r-mob.png 1x, img/@2x/angle-t-r-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--t_l">
+                                <img class="lazy document-angle--desc"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-t-l-desc.png"
+                                data-srcset="img/@1x/angle-t-l-desc.png 1x, img/@2x/angle-t-l-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-t-l-mob.png"
+                                data-srcset="img/@1x/angle-t-l-mob.png 1x, img/@2x/angle-t-l-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--b_r">
+                                <img class="lazy document-angle--desc"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-b-r-desc.png"
+                                data-srcset="img/@1x/angle-b-r-desc.png 1x, img/@2x/angle-b-r-desc.png 2x" alt="">
+                            <img class="lazy document-angle--mob"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-b-r-mob.png"
+                                data-srcset="img/@1x/angle-b-r-mob.png 1x, img/@2x/angle-b-r-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--b_l">
+                                <img class="lazy document-angle--desc"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-b-l-desc.png"
+                                    data-srcset="img/@1x/angle-b-l-desc.png 1x, img/@2x/angle-b-l-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-b-l-mob.png"
+                                    data-srcset="img/@1x/angle-b-l-mob.png 1x, img/@2x/angle-b-l-mob.png 2x" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" data-modal="doc-modal-2">
+                        <div class="modal-content">
+                            <img class="lazy"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/document1.jpg"
+                                data-srcset="img/@1x/document1.jpg 1x, img/@2x/document1.jpg 2x" alt="">
+                            <div class="modal-close-btn">
+                                <svg class="icon">
+                                    <use xlink:href="img/icons/sprite.svg#btn-close"></use>
+                                </svg>
+                            </div>
+                            <div class="document-angle document-angle--t_r">
+                                <img class="lazy document-angle--desc"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-t-r-desc.png"
+                                    data-srcset="img/@1x/angle-t-r-desc.png 1x, img/@2x/angle-t-r-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-t-r-mob.png"
+                                    data-srcset="img/@1x/angle-t-r-mob.png 1x, img/@2x/angle-t-r-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--t_l">
+                                <img class="lazy document-angle--desc"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-t-l-desc.png"
+                                data-srcset="img/@1x/angle-t-l-desc.png 1x, img/@2x/angle-t-l-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-t-l-mob.png"
+                                data-srcset="img/@1x/angle-t-l-mob.png 1x, img/@2x/angle-t-l-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--b_r">
+                                <img class="lazy document-angle--desc"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-b-r-desc.png"
+                                data-srcset="img/@1x/angle-b-r-desc.png 1x, img/@2x/angle-b-r-desc.png 2x" alt="">
+                            <img class="lazy document-angle--mob"
+                                src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                data-src="img/@1x/angle-b-r-mob.png"
+                                data-srcset="img/@1x/angle-b-r-mob.png 1x, img/@2x/angle-b-r-mob.png 2x" alt="">
+                            </div>
+                            <div class="document-angle document-angle--b_l">
+                                <img class="lazy document-angle--desc"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-b-l-desc.png"
+                                    data-srcset="img/@1x/angle-b-l-desc.png 1x, img/@2x/angle-b-l-desc.png 2x" alt="">
+                                <img class="lazy document-angle--mob"
+                                    src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                                    data-src="img/@1x/angle-b-l-mob.png"
+                                    data-srcset="img/@1x/angle-b-l-mob.png 1x, img/@2x/angle-b-l-mob.png 2x" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Подложка под модальным окном -->
+                    <div class="modal-overlay"></div>
                 </div>
             </div>
-
             <section class="chat">
                 <div class="chat__banner lazy-background">
                     <p>Присоединиться к обсуждению</p>

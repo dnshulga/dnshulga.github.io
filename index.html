@@ -27,7 +27,7 @@
                     </div>
                     <span class="header__menu-title">- Меню</span>
                 </div>
-                <nav class="header__menu-bar">
+                <nav class="header__menu-bar lazy-background">
                     <div class="menu-bar__head">
                         <div class="header__menu-btn--close">
                             <div class="top-line"></div>
@@ -40,20 +40,19 @@
                         <a href="#">Акции!<br> Скидки!</a>
                         <a href="#">оценить заказ<br> за 20 минут!</a>
                     </div>
+                    <div class="header__menu-divider"></div>
                     <ul>
-                        <li><a href="#">Переводы</a></li>
-                        <li><a href="#">Легализация,Апостиль</a></li>
                         <li class="menu-bar__sub-link">
                             <a href="#">
                                 <span>
-                                    Нострификация
-                                    <svg class="icon">
-                                        <use xlink:href="img/icons/sprite.svg#right-arrow"></use>
-                                    </svg>
+                                    Переводы
                                 </span>
+                                <svg class="icon">
+                                    <use xlink:href="img/icons/sprite.svg#right-arrow"></use>
+                                </svg>
                             </a>
-
-                            <ul class="header__menu-sub">
+            
+                            <ul class="header__menu-sub lazy-background">
                                 <li><a href="#">Подменю</a></li>
                                 <li><a href="#">Подменю</a></li>
                                 <li><a href="#">Подменю</a></li>
@@ -61,6 +60,25 @@
                                 <li><a href="#">Подменю</a></li>
                             </ul>
                         </li>
+                        <li class="menu-bar__sub-link">
+                            <a href="#">
+                                <span>
+                                    Нострификация
+                                </span>
+                                <svg class="icon">
+                                    <use xlink:href="img/icons/sprite.svg#right-arrow"></use>
+                                </svg>
+                            </a>
+            
+                            <ul class="header__menu-sub lazy-background">
+                                <li><a href="#">Подменю</a></li>
+                                <li><a href="#">Подменю</a></li>
+                                <li><a href="#">Подменю</a></li>
+                                <li><a href="#">Подменю</a></li>
+                                <li><a href="#">Подменю</a></li>
+                            </ul>
+                        </li>                         
+                        <li><a href="#">Легализация,Апостиль</a></li>                       
                         <li><a href="#">Cправки о несудимости</a></li>
                         <li><a href="#">Документы</a></li>
                         <li><a href="#">для посольств</a></li>
@@ -199,17 +217,20 @@
                 <div class="line-title--mob">«<span>20</span>-летний опыт работы!»</div>
             </div>
             <div class="header__line-lang">
-                <i><svg class="icon">
-                        <use xlink:href="img/icons/sprite.svg#down-arrow"></use>
-                    </svg></i>
-                <p>
-                    Язык -
-                </p>
                 <div class="line-lang__btn">
+                    <i>
+                        <svg class="icon">
+                        <use xlink:href="img/icons/sprite.svg#down-arrow"></use>
+                        </svg>
+                    </i>
+                    <p>
+                        Язык -
+                    </p>                    
                     <span class="line-lang__title">Рус</span>
                     <ul>
                         <li><a href="#">Eng</a></li>
                         <li><a href="#">Укр</a></li>
+                        <li class="active"><a href="#">Рус</a></li>
                     </ul>
                 </div>
             </div>
@@ -556,8 +577,8 @@
                         <div class="advantage__item-text">
                             <div><b>Мы работаем для Вас</b></div>
                             <p><span>5% скидки</span> уже на первый заказ!
-                                <span>Бесплатная доставка</span> заказа по Киеву (при заказе от 5000 грн.)
-                                <span>Бесплатные консультации</span>
+                               <br> <span>Бесплатная доставка</span> заказа по Киеву (при заказе от 5000 грн.)
+                               <br><span>Бесплатные консультации</span>
                                 по документам в Вашей
                                 ситуации!</p>
                         </div>
@@ -1224,3 +1245,5 @@
 </body>
 
 </html>
+
+
