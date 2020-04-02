@@ -5,9 +5,12 @@
 ul.no-scroll::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
     display: none;
 }
+.no-chevron {
+    display: none;
+}
 .header__menu-bar>ul::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
     width: 5px;
-    background-color: transparent; /*#8e2a23;*/
+    background-color: #a18181; /*#8e2a23;*/
 } 
 .header__menu-bar>ul::-webkit-scrollbar-thumb, .header__menu-sub::-webkit-scrollbar-thumb {
     background-color: #f9f9f9;

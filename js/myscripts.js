@@ -21,12 +21,16 @@ $(document).ready(function(){
 				$(this).find('.header__menu-sub').slideDown();
 				$(this).get(0).scrollIntoView();
 				$('.header__menu-bar>ul').addClass('no-scroll');
+				$('.chevron').addClass('no-chevron');
+
 				flag = true;
 			}	
 			else {
 				$('.header__menu-sub').slideUp();
 				$(this).get(0).scrollIntoView();
 				$('.header__menu-bar>ul').removeClass('no-scroll');
+				$('.chevron').removeClass('no-chevron');
+
 				flag = false;
 			}
 		});
