@@ -3,10 +3,14 @@
 }
 .header__menu-bar>ul::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
     width: 6px;
-    background-color: #8e2a23;
+    background-color: #fff;
 } 
 .header__menu-bar>ul::-webkit-scrollbar-thumb, .header__menu-sub::-webkit-scrollbar-thumb {
-    background-color: #e7a711;
+    background-color: transparent;
+}
+.header__menu-bar ul {
+    padding-right: 0;
+    margin-right: 40px;
 }
 @media (max-height: 600px), (orientation: landscape) {
 	.header__menu-bar>ul {
