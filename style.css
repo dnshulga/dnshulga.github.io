@@ -1,16 +1,43 @@
 .header__menu-bar>ul {
 	overflow-y: scroll;
+	position: relative;
 }
 .header__menu-bar>ul::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
-    width: 6px;
-    background-color: #fff;
+    width: 5px;
+    background-color: transparent; /*#8e2a23;*/
 } 
 .header__menu-bar>ul::-webkit-scrollbar-thumb, .header__menu-sub::-webkit-scrollbar-thumb {
-    background-color: #8e2a23;
-}
+    background-color: #f9f9f9;
+}/*
+.header__menu-bar>ul::-webkit-scrollbar-button {
+	background-color: #fff;
+	color: #000;
+}*/
 .header__menu-bar ul {
     padding-right: 0;
     margin-right: 40px;
+}
+.chevron {
+	height: 10px;
+    position: relative;
+    padding-right: 38.5px;
+    margin-bottom: 5px;
+}
+.chevron svg.up {
+	height: 100%;
+    float: right;
+    width: auto;
+    width: 9px;
+    fill: #fff;
+    transform: rotate(270deg);
+}
+.chevron svg.down {
+	height: 100%;
+    float: right;
+    width: auto;
+    width: 9px;
+    fill: #fff;
+    transform: rotate(90deg);
 }
 @media (max-height: 600px), (orientation: landscape) {
 	.header__menu-bar>ul {

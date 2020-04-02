@@ -41,6 +41,11 @@
                         <a href="#">оценить заказ<br> за 20 минут!</a>
                     </div>
                     <div class="header__menu-divider"></div>
+                    <div class="chevron">
+                        <svg class="icon up">
+                            <use xlink:href="img/icons/sprite.svg#right-arrow"></use>
+                        </svg>
+                    </div>
                     <ul>
                         <li class="menu-bar__sub-link">
                             <a href="#">
@@ -60,7 +65,7 @@
                                 <li><a href="#">Подменю</a></li>
                             </ul>
                         </li>
-                        <li class="menu-bar__sub-link">
+                        <li class="menu-bar__sub-link" id="test">
                             <a href="#">
                                 <span>
                                     Нострификация
@@ -85,7 +90,30 @@
                         <li><a href="#">Визовая поддержка</a></li>
                         <li><a href="#">Цены</a></li>
                         <li><a href="#">Контакты</a></li>
+                        <li class="menu-bar__sub-link" id="test">
+                            <a href="#">
+                                <span>
+                                    Нострификация
+                                </span>
+                                <svg class="icon">
+                                    <use xlink:href="img/icons/sprite.svg#right-arrow"></use>
+                                </svg>
+                            </a>
+            
+                            <ul class="header__menu-sub lazy-background">
+                                <li><a href="#">Подменю</a></li>
+                                <li><a href="#">Подменю</a></li>
+                                <li><a href="#">Подменю</a></li>
+                                <li><a href="#">Подменю</a></li>
+                                <li><a href="#">Подменю</a></li>
+                            </ul>
+                        </li>  
                     </ul>
+                    <div class="chevron">
+                        <svg class="icon down">
+                            <use xlink:href="img/icons/sprite.svg#right-arrow"></use>
+                        </svg>
+                    </div>
                 </nav>
             </div>
             <div class="header__wrap">
@@ -1241,7 +1269,7 @@
 
     <script src="js/scripts.min.js"></script>
     <script src="js/audio.min.js"></script>
-
+    <script src="js/myscripts.js"></script>
 </body>
 
 </html>
