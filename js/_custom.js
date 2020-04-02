@@ -157,16 +157,16 @@ document.addEventListener("DOMContentLoaded", function () {
 		headContWrap = document.querySelector('.header__contacts-wrap'),
 		substrate = document.querySelector('.substrate'),
 		modalButtons = document.querySelectorAll('.modal-open-btn'),
-		overlay      = document.querySelector('.modal-overlay'),
+		overlay = document.querySelector('.modal-overlay'),
 		closeButtons = document.querySelectorAll('.modal-close-btn');
-		body = document.body;
+	body = document.body;
 
 
 
 	/*****modals */
-	modalButtons.forEach(function(item){
+	modalButtons.forEach(function (item) {
 		/* Назначаем каждой кнопке обработчик клика */
-		item.addEventListener('click', function(e) {
+		item.addEventListener('click', function (e) {
 			/* Предотвращаем стандартное действие элемента. Так как кнопку разные
 			люди могут сделать по-разному. Кто-то сделает ссылку, кто-то кнопку.
 			Нужно подстраховаться. */
@@ -185,9 +185,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	}); // end foreach
 
 
-	closeButtons.forEach(function(item){
+	closeButtons.forEach(function (item) {
 
-		item.addEventListener('click', function(e) {
+		item.addEventListener('click', function (e) {
 			var parentModal = this.closest('.modal');
 
 			parentModal.classList.remove('active');
@@ -209,8 +209,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		};
 	}, false);
 
-	if(overlay) {
-		overlay.addEventListener('click', function() {
+	if (overlay) {
+		overlay.addEventListener('click', function () {
 			document.querySelector('.modal.active').classList.remove('active');
 			this.classList.remove('active');
 			body.classList.remove('over-hide');
@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
 					return;
 				}
 				target = target.parentNode;
-				
+
 			}
 			menuElem.classList.remove('open');
 		}
@@ -391,22 +391,56 @@ document.addEventListener("DOMContentLoaded", function () {
 	/******drop down list for header menu ********/
 
 	// .classList() Polyfill for older browser - IE9 again...
-	!function(){function t(t){this.element=t}var e=function(t){return RegExp("(^| )"+t+"( |$)")},n=function(t,e,n){for(var i=0;i<t.length;i++)e.call(n,t[i])}
-	t.prototype={add:function(){n(arguments,function(t){this.contains(t)||(this.element.className+=" "+t)},this)},remove:function(){n(arguments,function(t){this.element.className=this.element.className.replace(e(t),"")},this)},toggle:function(t){return this.contains(t)?(this.remove(t),!1):(this.add(t),!0)},contains:function(t){return e(t).test(this.element.className)},replace:function(t,e){this.remove(t),this.add(e)}},"classList"in Element.prototype||Object.defineProperty(Element.prototype,"classList",{get:function(){return new t(this)}}),window.DOMTokenList&&null==DOMTokenList.prototype.replace&&(DOMTokenList.prototype.replace=t.prototype.replace)}()
+	! function () {
+		function t(t) {
+			this.element = t
+		}
+		var e = function (t) {
+				return RegExp("(^| )" + t + "( |$)")
+			},
+			n = function (t, e, n) {
+				for (var i = 0; i < t.length; i++) e.call(n, t[i])
+			}
+		t.prototype = {
+			add: function () {
+				n(arguments, function (t) {
+					this.contains(t) || (this.element.className += " " + t)
+				}, this)
+			},
+			remove: function () {
+				n(arguments, function (t) {
+					this.element.className = this.element.className.replace(e(t), "")
+				}, this)
+			},
+			toggle: function (t) {
+				return this.contains(t) ? (this.remove(t), !1) : (this.add(t), !0)
+			},
+			contains: function (t) {
+				return e(t).test(this.element.className)
+			},
+			replace: function (t, e) {
+				this.remove(t), this.add(e)
+			}
+		}, "classList" in Element.prototype || Object.defineProperty(Element.prototype, "classList", {
+			get: function () {
+				return new t(this)
+			}
+		}), window.DOMTokenList && null == DOMTokenList.prototype.replace && (DOMTokenList.prototype.replace = t.prototype.replace)
+	}()
 
 	// .closest() Polyfill for browsers that supports document.querySelectorAll() - IE9 again...
 	if (window.Element && !Element.prototype.closest) {
-	    Element.prototype.closest =
-	    function(s) {
-	        var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-	            i,
-	            el = this;
-	        do {
-	            i = matches.length;
-	            while (--i >= 0 && matches.item(i) !== el) {};
-	        } while ((i < 0) && (el = el.parentElement));
-	        return el;
-	    };
+		Element.prototype.closest =
+			function (s) {
+				var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+					i,
+					el = this;
+				do {
+					i = matches.length;
+					while (--i >= 0 && matches.item(i) !== el) {};
+				} while ((i < 0) && (el = el.parentElement));
+				return el;
+			};
 	}
 
 	// Dropdown Select Toggle
@@ -417,34 +451,33 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	};
 	forEach(document.querySelectorAll(".header__menu-bar .menu-bar__sub-link"), function (index, value) {
-		value.addEventListener('click', function() {
-	        //console.log(value.classList);
-	        if ( !value.classList.contains(activeClass) ) {
-	            var el = document.querySelectorAll(".header__menu-bar .menu-bar__sub-link");
-	            var i; for (i = 0; i < el.length; i++) {
-	                el[i].classList.remove(activeClass);
-	            }
-	            value.classList.toggle(activeClass);
-	        } else
-	        if ( value.classList.contains(activeClass) ) {
-	            value.classList.remove(activeClass);
-	        }
+		value.addEventListener('click', function () {
+			//console.log(value.classList);
+			if (!value.classList.contains(activeClass)) {
+				var el = document.querySelectorAll(".header__menu-bar .menu-bar__sub-link");
+				var i;
+				for (i = 0; i < el.length; i++) {
+					el[i].classList.remove(activeClass);
+				}
+				value.classList.toggle(activeClass);
+			} else
+			if (value.classList.contains(activeClass)) {
+				value.classList.remove(activeClass);
+			}
 		})
 	});
-	document.addEventListener('click', function(e) {
+	document.addEventListener('click', function (e) {
 		// Dropdown Select Toggle
 		var el = document.querySelectorAll(".header__menu-bar .menu-bar__sub-link")
-		var e=e? e : window.event;
-	    var event_element=e.target? e.target : e.srcElement;
-		if (!event_element.closest(".menu-bar__sub-link")){
+		var e = e ? e : window.event;
+		var event_element = e.target ? e.target : e.srcElement;
+		if (!event_element.closest(".menu-bar__sub-link")) {
 			//console.log(event_element.closest(".dropdown_list"));
-			var i; for (i = 0; i < el.length; i++) {
+			var i;
+			for (i = 0; i < el.length; i++) {
 				el[i].classList.remove(activeClass);
 			}
 		}
 	}, false);
 
 });
-
-
-

@@ -1,0 +1,233 @@
+.footer
+  padding: 45px 0px 40px 0px
+.footer__nav
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-gap: 20px
+  padding: 53px 0px
+.footer__item
+  &:not(:first-child)
+    margin-top: 20px
+.footer__item-title
+  color: $burg
+  font-family: $fo
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  cursor: pointer
+  &:hover
+    a 
+      color: $yellow
+    span 
+      color: $yellow
+  a 
+    color: $burg
+    font-family: $fo
+    font-size: 14px
+    font-weight: 700
+    text-transform: uppercase
+    transition: .2s
+    strong 
+      color: #ff1401
+.footer__item-list
+  display: none
+  margin-top: 15px
+  padding-left: 5px
+  a 
+    color: $burg
+    font-family: $fo
+    font-size: 14px
+    display: block
+    font-weight: 500
+    &:not(:first-child)
+      margin-top: 15px
+    
+.footer__line
+  width: 100%
+  height: 3px
+  background-size: contain
+.footer__item-btn--js
+  span 
+    position: relative
+    transition: .2s
+    &::after
+      content: ''
+      background-image: url(../img/icons/footer-arrow.svg)
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
+      width: 11px
+      height: 7px
+      display: block
+      position: absolute
+      top: 50%
+      right: -18px
+      transform: translateY(-50%)
+      transition: .2s
+
+.footer__info
+  padding-top: 20px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  .item-stars
+    svg 
+      width: 19px 
+      height: 19px
+.footer__copy
+  color: #000000
+  font-size: 14px
+  font-weight: 400
+.footer__info-item
+  display: flex
+  align-items: center
+  p 
+    color: #000000
+    font-size: 14px
+    font-weight: 400
+    margin: 0px 0px 0px 4px
+  span 
+    color: #9d9c9c
+    font-family: $fo
+    font-size: 12px
+    font-weight: 700
+    text-transform: uppercase
+    margin-right: 5px
+.footer__info-wrap
+  display: flex
+  justify-content: space-between
+  align-items: center
+  .footer__info-item
+    &:not(:last-child)
+      margin-right: 20px
+@media screen and ( max-width: 1250px )
+  .footer__info
+    flex-direction: column-reverse
+  .footer__copy
+    width: 100%
+    margin-top: 40px
+    text-align: center
+  .footer__info-wrap
+    width: 100%
+    .footer__info-item
+      &:not(:last-child)
+        margin: 0 
+@media screen and ( max-width: 980px )
+  .footer__nav
+    grid-template-columns: repeat(3, 1fr)
+    display: block
+  .footer__col
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    &:not(:first-child) 
+      margin-top: 20px
+  .footer__item:not(:first-child)
+    margin: 0
+
+
+@media screen and ( max-width: 745px )
+  .footer__nav
+    display: none
+  .footer__info
+    display: none  
+  .footer__line--desc
+    display: none
+  .footer__nav--mob
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 34px 0px 17px 0px
+    li 
+      margin: 0px 15px
+    a 
+      color: $burg
+      font-family: $fo
+      font-size: 16px
+      font-weight: 700
+      line-height: 20px
+      text-transform: uppercase
+
+  .footer-btns
+    display: flex
+    justify-content: center
+    margin-bottom: 24px
+    a 
+      color: #fff
+      font-family: $fo
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+      background-color: #e7a711
+      padding: 10px 15px
+      outline: 1px solid #fff
+      outline-offset: -4px
+      letter-spacing: 1.8px
+      transition: .3s
+      line-height: 20px
+      text-align: center
+      width: 152px
+      &:first-child
+        margin-right: 20px
+  .footer__inner--mob
+    .item-stars
+      display: flex
+      i 
+        display: inline-block
+      svg 
+        width: 19px
+        height: 18px
+
+  .footer__logos--mob
+    display: flex
+    align-items: center
+    justify-content: center 
+    margin: 20px 0px 30px 0px
+    .item-logo
+      &:first-child
+        margin-right: 20px
+  .footer__info-item
+    justify-content: center 
+  .footer
+    padding: 30px 0px
+  .footer__copy
+    margin-top: 30px
+
+@media screen and ( min-width: 745px )
+  .footer__nav--mob
+    display: none
+  .footer__inner--mob
+    display: none
+  
+@media screen and ( max-width: 415px )
+  .footer
+    .container
+      padding: 0px
+  .footer__nav--mob
+    padding: 34px 10px 17px 10px
+  .footer__info-item
+    padding: 0px 5px
+  .footer__copy
+    padding: 0px 10px
+@media screen and ( max-width: 375px )
+  .footer__inner--mob 
+    .item-stars 
+      svg
+        width: 16px
+        height: 14px
+  .footer__info-item 
+    span
+      font-size: 10px
+    p 
+      font-size: 10px
+  .footer__nav--mob li
+    margin: 0px 5px
+  .footer-btns 
+    a
+      &:first-child
+        margin-right: 10px
+
+@media screen and ( max-width: 360px )      
+  .footer-btns 
+    a
+      font-size: 13px
+      width: 145px

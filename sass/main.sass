@@ -1,0 +1,3347 @@
+@import vars
+@import fonts
+@import libs
+
+*
+  margin: 0
+  padding: 0
+
+img
+  max-width: 100%
+
+h1, h2, h3, h4, h5, h6
+  color: $burg
+a
+  text-decoration: none
+  &:hover
+    text-decoration: none
+    color: inherit
+p
+  margin: 0
+b
+  font-weight: 700
+ol, ul
+  margin: 0
+  padding: 0
+  list-style: none
+
+button,
+input,
+optgroup,
+select,
+textarea
+  padding: 0
+  margin: 0
+  border: none
+  border-radius: 0
+  box-shadow: none
+  background-color: transparent
+  font: inherit
+  color: inherit
+  letter-spacing: inherit
+
+button,
+input
+  overflow: visible
+
+button
+  text-transform: none
+
+select
+  text-align: left
+  text-transform: none
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit']
+  cursor: pointer
+  -webkit-appearance: none
+
+textarea
+  resize: none
+  overflow-y: auto
+  overflow-x: hidden
+  outline: none
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner
+  border: none
+  padding: 0
+
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring
+  outline: none
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button
+  height: auto
+
+[type='search']::-webkit-search-decoration
+  -webkit-appearance: none
+
+[type='search']
+  outline: none
+
+::-webkit-file-upload-button
+  -webkit-appearance: button
+  font: inherit
+
+body
+  overflow-x: hidden
+  font-family: $fg
+  font-weight: 400
+  position: relative
+  line-height: 1
+  color: #000000
+  background-image: linear-gradient(to right, #e8d2c4 0%, #ffffff 13.5%, #ffffff 50%, #ffffff 86.5%, #e8d2c4 100%)
+  &.over-hide
+    overflow-y: hidden
+
+@media screen and ( max-width: 1300px )
+  body
+    background-image: linear-gradient(to right, #e8d2c4 0%, #fcf8ed 4%, #fcf8ed 50%, #fcf8ed 96%, #e8d2c4 100%)
+@media screen and ( max-width: 475px )
+  body
+    background-image: linear-gradient(to right, #e8d2c4 0%, #ffffff 4%, #ffffff 50%, #ffffff 96%, #e8d2c4 100%)
+.container
+  max-width: 1240px
+  padding: 0px 20px 0px 20px
+  margin-left: auto
+  margin-right: auto
+
+/********header*********/
+@import header
+/*********header**********/
+
+/*******modal*******/
+.modal
+  display: flex
+  align-items: center
+  justify-content: center
+  position: fixed
+  z-index: -999
+  width: 100%
+  height: 0
+  max-width: 600px
+  padding: 0
+  margin: 0
+  border: none
+  overflow: hidden
+  opacity: 0
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  &.active
+    opacity: 1
+    overflow: auto
+    z-index: 999
+    height: auto
+    visibility: visible
+    padding: 30px 0px
+.modal-content
+  margin: auto
+  background-color: #ffffff
+  position: relative
+.modal-close-btn
+  position: absolute
+  right: -30px
+  top: -20px
+  cursor: pointer
+  svg
+    width: 19px
+    height: 19px
+    fill: #ffffff
+.modal-overlay
+  opacity: 0
+  visibility: hidden
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, .5)
+  z-index: 20
+  transition: .3s all
+  &.active
+    opacity: 1
+    visibility: visible
+
+@media screen and ( max-width: 768px )
+  .modal.active
+    padding: 50px 0px 30px 0px
+  .modal-content
+    img
+      display: block
+
+@media screen and ( max-width: 640px )
+  .modal-close-btn
+    right: 0
+    top: -30px
+
+.main
+  padding-top: 200px
+@media screen and ( max-width: 1250px )
+  .main
+    padding-top: 170px
+@media screen and ( max-width: 1080px )
+  .main
+    padding-top: 20px
+
+/****breadcrumbs****/
+.breadcrumbs
+  margin-bottom: 30px
+  ul
+    display: flex
+    align-items: center
+    li
+      position: relative
+      padding-right: 10px
+      &::after
+        content: ''
+        display: block
+        width: 10px
+        height: 100%
+        position: absolute
+        right: 1px
+        top: 0
+        background-image: url(../img/icons/breadcrumb-arrow.svg)
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+      &:not(:first-child)
+        margin-left: 10px
+      a
+        color: #fdfcf6
+        font-size: 14px
+        padding: 3px 5px 3px 8px
+        font-weight: 400
+        line-height: 18px
+        background-color: #8e2a23
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 100%
+      &.current
+        a
+          color: #8e2a23
+          background-color: transparent
+        &::after
+          display: none
+
+@media screen and ( max-width: 375px )
+  .breadcrumbs
+    ul
+      overflow-x: auto
+      li
+        &:not(:first-child)
+          margin-left: 5px
+        a
+          font-size: 12px
+          white-space: nowrap
+
+/****circle icon*****/
+.circle-icon
+  position: absolute
+  width: 46px
+  height: 46px
+  border-radius: 50%
+  border: 6px solid #ffffff
+  z-index: 1
+  top: 50%
+  transform: translateY(-50%)
+  display: flex
+  justify-content: center
+  align-items: center
+  &::after
+    content: ''
+    display: block
+    width: 34px
+    height: 34px
+    background-color: $yellow
+    position: absolute
+    border-radius: 50%
+    z-index: -1
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  svg
+    max-width: 20px
+    max-height: 20px
+    fill: #ffffff
+
+/***rating stars****/
+.rating__group
+  width: 5em
+  height: 1em
+  background-image: url(../img/icons/star-grey.svg)
+  background-size: 1em auto
+  background-repeat: repeat-x
+  position: relative
+  z-index: 0
+.rating__star
+  position: absolute
+  top: 0
+  left: 0
+  margin: 0
+  height: 1em
+  font-size: inherit
+  appearance: none
+  background-size: 1em auto
+  background-repeat: repeat-x
+  outline: none
+  cursor: pointer
+.rating__star:hover,
+.rating__star:checked
+  background-image: url(../img/icons/star-yellow.svg)
+
+.rating__star:hover ~ .rating__star
+  background-image: url(../img/icons/star-grey.svg)
+
+.rating__star:nth-of-type(1)
+  z-index: 5
+  width: 1em
+
+.rating__star:nth-of-type(2)
+  z-index: 4
+  width: 2em
+
+.rating__star:nth-of-type(3)
+  z-index: 3
+  width: 3em
+
+.rating__star:nth-of-type(4)
+  z-index: 2
+  width: 4em
+
+.rating__star:nth-of-type(5)
+  z-index: 1
+  width: 5em
+
+/****custom select****/   
+.custom-select
+  position: relative
+  select
+    display: none
+
+.select-selected
+  border: 1px solid #e7a711
+  background-color: #ffffff
+  &:after
+    position: absolute
+    content: url(../img/icons/select-arrow.svg)
+    top: 12px
+    right: 12px
+    background-color: $yellow
+    width: 20px
+    height: 20px
+    text-align: center
+.select-selected.select-arrow-active:after
+  transform: rotate(180deg)
+
+.select-items div,.select-selected
+  color: #000000
+  font-size: 14px
+  font-weight: 400
+  line-height: 18px
+  padding: 12px 16px
+  cursor: pointer
+  user-select: none
+
+.select-items
+  position: absolute
+  background-color: #ffffff
+  top: 100%
+  left: 0
+  right: 0
+  z-index: 99
+  border-right: 1px solid $yellow
+  border-left: 1px solid $yellow
+  border-bottom: 1px solid $yellow
+  div
+    padding: 6px 16px
+
+.select-hide
+  display: none
+
+.select-items div:hover, .same-as-selected
+  background-color: $yellow
+  color: #fff
+
+/****titles*****/ 
+.title
+  color: #6f231d
+  font-family: $fo
+  font-size: 30px
+  font-weight: 700
+  line-height: 36px
+  margin-bottom: 30px
+@media screen and ( max-width: 475px )
+  .title
+    font-size: 22px
+    line-height: 28px
+
+.caption
+  color: #6f231d
+  font-family: $fo
+  font-size: 24px
+  font-weight: 700
+  line-height: 24px
+
+@media screen and ( max-width: 475px )
+  .caption
+    font-size: 22px
+    line-height: 26px
+
+/****hidden*****/   
+.visually-hidden
+  position: absolute
+  width: 0
+  height: 0
+  z-index: -99
+  opacity: 0
+  border: none
+  margin: 0
+  padding: 0
+  overflow: hidden
+
+.substrate
+  width: 0
+  height: 0
+  position: absolute
+  z-index: 0
+  background-color: rgba(0, 0, 0, .4)
+  top: 0
+  left: 0
+  opacity: 0
+  transition: opacity .2s ease-in-out
+  &.active
+    width: 100vw
+    height: 100vh
+    z-index: 2
+    opacity: 1
+
+/********buttons***/   
+.btn
+  color: #ffffff
+  font-family: $fo
+  font-size: 14px
+  font-weight: 700
+  height: 44px
+  width: 100%
+  background-color: $burg
+  text-transform: uppercase
+  letter-spacing: 1.4px
+  transition: .3s
+  display: block
+  &:hover
+    background-color: $yellow
+    color: #ffffff
+
+/*********slider arrows custom*******/
+.swiper-button-next, .swiper-button-prev
+  background-color: $yellow
+  width: 20px
+  height: 20px
+  margin: 0
+  transform: translateY(-50%)
+  outline: none
+  z-index: 1
+  &::after
+    display: none
+.swiper-button-next
+  right: 0px
+  &::before
+    content: ''
+    background-image: url(../img/icons/right-arrow.svg)
+    background-size: contain
+    background-position: center
+    background-repeat: no-repeat
+    display: block
+    width: 7px
+    height: 11px
+.swiper-button-prev
+  left: 0px
+  &::before
+    content: ''
+    background-image: url(../img/icons/left-arrow.svg)
+    background-size: contain
+    background-position: center
+    background-repeat: no-repeat
+    display: block
+    width: 7px
+    height: 11px
+.swiper-slide
+  height: auto
+
+/******section catalog******/
+.catalog
+  background-image: url(../img/catalog-bg.png)
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: center
+  padding-bottom: 25px
+  .wrapper
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 7px
+
+.catalog__item
+  position: relative
+  display: flex
+  padding: 5px
+  height: 231px
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  background-color: #ffffff
+  .item-pic--mob
+    display: none
+  .circle-icon
+    left: 150px
+    svg
+      max-width: 24px
+      max-height: 20px
+      fill: #ffffff
+.catalog__item-pic
+  width: 171px
+  background-color: $sand
+.catalog__item-text
+  padding-left: 30px
+  display: flex
+  justify-content: center
+  flex-direction: column
+  font-weight: 700
+  font-family: $fo
+  br
+    display: none
+  &:hover
+    b, p
+      color: $yellow
+
+  div
+    max-width: 175px
+  b
+    color: $burg
+    font-size: 30px
+    line-height: 30px
+    transition: .2s
+  p
+    color: #2b2a29
+    font-size: 25px
+    line-height: 24px
+    margin-top: 15px
+    transition: .2s
+    span
+      color: $yellow
+      font-size: 25px
+      line-height: 24px
+  .f-s
+    font-size: 25px
+.catalog__item-logo
+  border: none
+  box-shadow: none
+  width: 100%
+  text-align: center
+  background-color: transparent
+  .catalog__item-pic
+    width: 100%
+    background-color: transparent
+    display: flex
+    align-items: center
+    justify-content: center
+
+@media screen and ( max-width: 1250px )
+  .catalog__item
+    .item-pic--desc
+      display: none
+    .item-pic--mob
+      display: block
+  .container
+    max-width: 1040px
+  .catalog__item
+    flex-direction: column
+    height: auto
+    .circle-icon
+      top: 120px
+      left: 50%
+      transform: translateX(-50%)
+  .catalog__item-pic
+    width: 100%
+    display: flex
+    justify-content: flex-end
+    height: 136px
+  .catalog__item-logo
+    .catalog__item-pic
+      justify-content: center
+      height: 100%
+      align-items: center
+  .catalog__item-text
+    padding: 40px 8px 10px 8px
+    .f-s
+      font-size: 22px
+    div
+      max-width: 100%
+      text-align: center
+    b
+      font-size: 22px
+      line-height: 20px
+    p
+      font-size: 17px
+      line-height: 14px
+      margin-top: 10px
+      span
+        font-size: 17px
+        line-height: 14px
+@media (max-width: 768px)
+  .catalog__item
+    .item-pic--mob
+      display: block
+    .item-pic--desc
+      display: none
+@media (max-width: 700px)
+  .catalog__item-text
+    padding: 25px 0px 5px 0px
+    b
+      font-size: 18px
+      line-height: 16px
+    p
+      font-size: 16px
+    .f-s
+      font-size: 18px
+      line-height: 16px
+  .header__logo
+    margin: 0px
+  .catalog__item-pic
+    height: 120px
+  .catalog__item .circle-icon
+    top: 100px
+
+@media (max-width: 475px)
+  .catalog__item-pic
+    height: 90px
+  .catalog__item
+    .circle-icon
+      top: 80px
+      width: 30px
+      height: 30px
+      svg
+        max-width: 14px
+        max-height: 14px
+      &::after
+        width: 24px
+        height: 24px
+  .catalog__item-text
+    b
+      font-size: 14px
+      line-height: 14px
+    p
+      margin-top: 5px
+      font-size: 14px
+      span
+        font-size: 14px
+        line-height: 10px
+    .f-s
+      font-size: 14px
+      line-height: 14px
+
+@media (max-width: 415px)
+  .catalog__item-pic
+    height: 60px
+  .catalog__item .circle-icon
+    top: 50px
+
+  .catalog__item-text
+    br
+      display: block
+@media (max-width: 415px)
+  .catalog__item
+    padding: 3px
+  .catalog__item-text
+    padding: 18px 0px 2px 0px
+    p
+      span
+        font-size: 13px
+
+@media (max-width: 340px)
+  .catalog__item-text
+    b
+      font-size: 12px
+    p
+      font-size: 12px
+    .f-s
+      font-size: 12px
+/*****section location******/
+.location
+  padding: 25px 0px 30px 0px
+.location__card
+  display: flex
+  justify-content: space-between
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  background-color: #ffffff
+  padding: 10px 10px 10px 40px
+
+.location__card-title
+  color: $burg
+  font-family: $fo
+  font-size: 30px
+  font-weight: 700
+  line-height: 36px
+  margin-bottom: 30px
+.location__card-text
+  max-width: 641px
+  margin: auto 0px
+  padding-right: 20px
+
+  p
+    font-family: $fg
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+  a
+    color: $burg
+    font-weight: 500
+    text-decoration: underline
+    text-underline-position: under
+.location__card-pic
+  position: relative
+  .circle-icon
+    left: -23px
+.location__card-pic--mob
+  display: none
+
+@media screen and ( max-width: 1250px )
+  .location__card
+    padding: 15px 8px 10px 30px
+
+@media screen and ( max-width: 1080px )
+  .location__card-pic--desc
+    display: none
+  .location__card-pic--mob
+    display: block
+
+@media screen and ( max-width: 768px )
+  .location__card-text
+    max-width: 400px
+
+@media screen and ( max-width: 700px )
+  .location__card-pic--mob
+    display: none
+  .location__card-pic .circle-icon
+    right: 0px
+    top: 15px
+    left: auto
+  .location__card-title
+    padding-right: 30px
+  .location__card-text
+    max-width: 100%
+@media screen and ( max-width: 475px )
+  .location__card-title
+    font-size: 22px
+    line-height: 28px
+  .location__card-text
+    max-width: 100%
+@media screen and ( max-width: 340px )
+  .location__card
+    padding: 15px 8px 10px 15px
+/******section advantage******/   
+.advantage
+  padding: 30px 0px 33px 0px
+  .title
+    text-align: center
+    margin-bottom: 37px
+  .wrapper
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    grid-gap: 20px
+.advantage__item
+  position: relative
+  &:last-child
+    &::after
+      display: none
+  &::after
+    content: url(../img/icons/shape-icon.svg)
+    display: block
+    position: absolute
+    top: 40px
+    right: 45px
+  div
+    b
+      color: $burg
+      font-family: $fo
+      font-size: 16px
+  p
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+    margin-top: 24px
+    b
+      text-decoration: underline
+      text-underline-position: under
+      font-family: $fg
+      color: #000
+  span
+    font-weight: 700
+    color: $burg
+.advantage__item-icon
+  position: relative
+  width: 90px
+  height: 90px
+  border-radius: 50%
+  background-color: $burg
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-bottom: 24px
+
+  svg
+    fill: #ffffff
+    max-width: 36px
+    max-height: 36px
+.advantage__item-num
+  position: absolute
+  bottom: 0
+  right: -8px
+  width: 32px
+  height: 32px
+  background-color: $yellow
+  border-radius: 50%
+  font-family: $fo
+  font-size: 16px
+  font-weight: 400
+  line-height: 36px
+  display: flex
+  justify-content: center
+  align-items: center
+  color: #ffffff
+
+@media screen and ( max-width: 1250px )
+  .advantage__item
+    &::after
+      right: 25px
+@media screen and ( max-width: 1080px )
+  .advantage
+    .wrapper
+      grid-template-columns: 1fr
+      grid-gap: 35px
+  .advantage__item
+    display: grid
+    grid-template-columns: 90px auto
+    grid-gap: 25px
+    p
+      margin-top: 18px
+  .advantage__item-icon
+    margin: 0
+  .advantage__item-text
+    padding-top: 15px
+
+  .advantage__item
+    &::after
+      right: auto
+      left: 38px
+      top: auto
+      bottom: -27px
+
+@media screen and ( max-width: 600px )
+  .advantage__item
+    &::after
+      bottom: -10px
+
+@media screen and ( max-width: 475px )
+  .advantage__item-icon
+    height: 60px
+    width: 60px
+    svg
+      max-width: 25px
+      max-height: 25px
+  .advantage__item-num
+    width: 22px
+    height: 22px
+    font-size: 11px
+  .advantage__item
+    grid-template-columns: 70px auto
+    grid-gap: 15px
+    &::after
+      bottom: 20px
+      left: 22px
+  .advantage .wrapper
+    grid-gap: 20px
+
+@media screen and ( max-width: 340px )
+  .advantage__item
+    &::after
+      bottom: 40px
+/******section audio-reviews*****/
+.audio-reviews
+  padding: 34px 0px 40px 0px
+  .caption
+    text-align: center
+  .slider-container
+    position: relative
+  .swiper-button-next
+    right: 170px
+  .swiper-button-prev
+    left: 25px
+.audio-reviews__inner
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  background-color: #ffffff
+  padding: 34px 10px 52px 10px
+  background-image: url(../img/radio-bg-desc.png)
+  background-position: right
+  background-repeat: no-repeat
+  background-size: contain
+  border: 5px solid #ffffff
+.audio-reviews__slider
+  margin: 43px 190px 0px 50px
+  .swiper-slide
+    padding: 5px
+    height: auto
+  .swiper-slide__inner
+    box-shadow: 0 2px 5px 1px #d6d1b2
+    background-color: #ffffff
+    padding: 18px 19px 18px 19px
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.audio-player
+  display: flex
+  justify-content: space-between
+  position: relative
+.audio-player__speaker
+  svg
+    width: 40px
+    height: 40px
+    fill: $burg
+.audio-player__title
+  font-size: 14px
+  font-weight: 400
+  line-height: 18px
+  margin-bottom: 20px
+.audio-payer__wrap
+  display: flex
+  align-items: center
+  span
+    margin-right: 7px
+    color: $burg
+    font-family: $fo
+    font-size: 12px
+    font-weight: 500
+    text-transform: uppercase
+.ppq-audio-player
+  width: 36px
+  height: 36px
+  border: 1px solid $burg
+  background-color: #ffffff
+  transition: .3s
+  cursor: pointer
+  position: relative
+  z-index: 1
+  &::after
+    content: ''
+    background-image: url(../img/icons/play-button-burg.svg)
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    display: block
+    width: 12px
+    height: 12px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: -1
+  &:hover
+    background-color: $burg
+    &:after
+      background-image: url(../img/icons/play-button-white.svg)
+  &.player-playing
+    &:hover
+      &:after
+        background-image: url(../img/icons/pause-white.svg)
+    &::after
+      background-image: url(../img/icons/pause-burg.svg)
+  .play-pause-btn
+    width: 100%
+    height: 100%
+  .player-time, .player-bar
+    display: none
+    position: absolute
+    z-index: -1
+    opacity: 0
+    margin: 0
+    padding: 0
+    border: none
+
+@media screen and ( max-width: 1080px )
+  .audio-reviews
+    padding: 10px 0px
+  .audio-reviews__inner
+    background-image: url(../img/radio-bg-desc-mob.png)
+
+@media screen and ( max-width: 740px )
+  .audio-reviews__slider
+    margin: 43px 60px 0 60px
+  .audio-reviews .swiper-button-next
+    right: 20px
+
+@media screen and ( max-width: 475px )
+  .audio-reviews__inner
+    padding: 28px 10px 30px 10px
+  .audio-reviews__slider
+    margin: 30px 30px 0 30px
+  .audio-reviews
+    .swiper-button-prev
+      left: 0
+    .swiper-button-next
+      right: 0
+
+@media screen and ( max-width: 475px )
+  .audio-reviews__slider
+    margin: 30px 20px 0 20px
+/*****section company****/
+.company
+  padding: 0px 0px 30px 0px
+  .caption
+    text-align: center
+    margin-bottom: 70px
+  .slider-container
+    margin: 0px 50px
+    position: relative
+  .swiper-slide
+    display: flex
+    justify-content: center
+    align-items: center
+.company__inner
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 5px solid #ffffff
+  background-color: #ffffff
+  padding: 45px 10px 95px 10px
+.company-btn-next
+  right: -35px
+.company-btn-prev
+  left: -35px
+
+@media screen and ( max-width: 475px )
+  .company__inner
+    padding: 25px 10px 50px 10px
+  .company
+    .caption
+      margin-bottom: 30px
+  .company-btn-next
+    right: -50px
+  .company-btn-prev
+    left: -50px
+/******section feedback*/
+.feedback
+  padding: 30px 0px 45px 0px
+  .wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 30px
+  .title
+    margin-bottom: 27px
+  .subtitle
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+    margin-bottom: 47px
+
+.feedback__form
+  background-color: $sand
+  padding: 35px 35px 45px 35px
+  background-image: url(../img/form-bg.png)
+  background-size: contain
+  background-position: bottom
+  background-repeat: no-repeat
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 26px solid #ffffff
+  .form-input
+    width: 100%
+    border: 1px solid $yellow
+    background-color: #ffffff
+    font-size: 16px
+    font-weight: 400
+    line-height: 18px
+    outline: none
+    padding: 13px 18px
+    margin-bottom: 10px
+  textarea
+    font-size: 16px
+    font-weight: 400
+    line-height: 18px
+    padding: 17px
+    width: 100%
+    height: 103px
+    border: 1px solid $yellow
+    background-color: #ffffff
+  .field
+    background-color: $sand
+    display: flex
+    justify-content: space-between
+    margin-top: 12px
+    position: relative
+    width: 100%
+    max-width: 453px
+  .inputfile-custom
+    width: 100%
+    margin: 0
+    position: relative
+    &::after
+      content: url(../img/icons/add-file-icon.svg)
+      width: 82px
+      height: 44px
+      background-color: $burg
+      position: absolute
+      right: 0
+      top: 0
+      display: flex
+      justify-content: center
+      align-items: center
+      cursor: pointer
+    span
+      color: $burg
+      font-size: 14px
+      font-weight: 500
+      line-height: 18px
+      display: block
+      background-color: #ffffff
+      height: 44px
+      width: 78%
+      padding: 12px 32px 12px 17px
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden
+      border: 1px solid #e7a711
+  .btn
+    margin-top: 23px
+.feedback-card__title
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 32px
+  span
+    color: #ffffff
+    font-family: $fo
+    font-size: 30px
+    font-weight: 700
+    line-height: 36px
+  svg
+    fill: #ffffff
+    width: 36px
+    height: 35px
+
+.feedback__contacts
+  background-color: $sand
+  padding: 35px 35px 45px 35px
+  background-image: url(../img/form-bg.png)
+  background-size: contain
+  background-position: bottom
+  background-repeat: no-repeat
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 26px solid #ffffff
+  .contacts-field__title
+    color: #9a9a9a
+    font-family: $fo
+    font-size: 12px
+    font-weight: 500
+    text-transform: uppercase
+    margin-bottom: 10px
+  .contacts-field
+    display: flex
+    .contacts-field__phone
+      padding-left: 25px
+      position: relative
+      &:nth-child(1)
+        margin-right: 70px
+    a
+      display: block
+      font-size: 16px
+      font-weight: 500
+      line-height: 24px
+      color: #000000
+    svg
+      max-width: 20px
+      max-height: 18px
+      fill: $burg
+      position: absolute
+      top: 50%
+      left: 0px
+      transform: translateY(-50%)
+  .contacts-divider
+    width: 288px
+    height: 1px
+    background-image: linear-gradient(90deg, #9d9c9c, #9d9c9c 75%, transparent 75%, transparent 100%)
+    background-size: 5px 1px
+    margin: 12px 0px
+  .contacts-field__mail
+    padding-left: 30px
+    position: relative
+    svg
+      max-width: 20px
+      max-height: 18px
+      fill: $burg
+      position: absolute
+      top: 50%
+      left: 0px
+      transform: translateY(-50%)
+    a
+      display: block
+      font-size: 16px
+      font-weight: 500
+      line-height: 24px
+      color: #000000
+      text-decoration: underline
+      text-underline-position: under
+  .contacts-field__address
+    padding-left: 30px
+    position: relative
+    svg
+      max-width: 20px
+      max-height: 18px
+      fill: $burg
+      position: absolute
+      top: 50%
+      left: 0px
+      transform: translateY(-50%)
+    span
+      font-size: 16px
+      font-weight: 500
+      line-height: 24px
+      color: #000000
+  .btn
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-top: 23px
+
+.feedback__card-bg
+  box-shadow: none
+  border: none
+  background-color: transparent
+  padding: 0
+  .feedback__contacts
+    box-shadow: 0 2px 5px 1px #d6d1b2
+    border: 26px solid #ffffff
+.feedback__contacts-wrap
+  padding: 17px 16px 21px 16px
+  position: relative
+  background-color: #ffffff
+  z-index: 0
+  &::after
+    content: ''
+    display: block
+    width: 158px
+    height: 170px
+    background-image: url(../img/feedback-contact.png)
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center
+    position: absolute
+    right: 0
+    bottom: 0
+    z-index: -1
+
+@media screen and ( max-width: 1250px )
+  .feedback
+    .wrapper
+      display: block
+  .feedback__form
+    .field
+      max-width: 100%
+  .feedback__card
+    max-width: 600px
+    margin: 0 auto
+    &:nth-child(1)
+      margin: 0px auto 40px auto
+@media screen and ( max-width: 768px )
+  .feedback__card
+    border: none
+    box-shadow: none
+    background: transparent
+    padding: 0px
+    &:nth-child(1)
+      margin-bottom: 34px
+  .feedback__form
+    border: 20px solid #ffffff
+  .feedback__contacts
+    border: 20px solid #ffffff
+  .feedback__card
+    max-width: 100%
+@media screen and ( max-width: 600px )
+  .feedback__form
+    .inputfile-custom
+      span
+        width: 100%
+        padding: 12px 92px 12px 17px
+  .feedback__contacts
+    .contacts-field
+      .contacts-field__phone:nth-child(1)
+        margin: 0
+      .contacts-field__phone:nth-child(2)
+        display: none
+    .contacts-field__address span br
+      display: none
+
+  .feedback__contacts-wrap::after
+    display: none
+@media screen and ( max-width: 475px )
+
+  .feedback__contacts
+    .contacts-divider
+      width: 85%
+  .feedback__form
+    border: 10px solid #fff
+    box-shadow: 0 2px 5px 1px #d6d1b2
+    padding: 20px 20px
+    .form-input
+      font-size: 14px
+      padding: 12px 18px
+    textarea
+      font-size: 14px
+  .feedback
+    padding: 20px 0px 30px 0px
+    .title
+      text-align: center
+      margin-bottom: 15px
+    .subtitle
+      text-align: center
+      margin-bottom: 25px
+  .feedback-card__title
+    margin-bottom: 23px
+    svg
+      width: 24px
+      height: 25px
+    span
+      font-size: 22px
+      line-height: 36px
+      -webkit-text-stroke-width: 1px
+      -webkit-text-stroke-color: rgba(243, 134, 54, 0.51)
+
+  .feedback__contacts
+    border: 10px solid #fff
+    box-shadow: 0 2px 5px 1px #d6d1b2
+    padding: 20px 20px
+    .contacts-field
+      a
+        font-size: 14px
+        line-height: 20px
+      .contacts-field__phone
+        padding-left: 30px
+
+    .contacts-field__mail
+      a
+        font-size: 14px
+        line-height: 20px
+    .contacts-field__address
+      span
+        font-size: 14px
+        line-height: 20px
+
+@media screen and ( max-width: 340px )
+  .feedback__form
+    border: 5px solid #fff
+    padding: 20px 10px
+  .feedback__contacts
+    border: 5px solid #fff
+    padding: 20px 10px
+
+/*******section info*******/
+.info
+  padding: 45px 0px 55px 0px
+  .title
+    margin-bottom: 24px
+    text-align: center
+  .info__subtitle
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+    text-align: center
+    margin-bottom: 40px
+  .info__item
+    box-shadow: 0 2px 5px 1px #d6d1b2
+    border: 5px solid #ffffff
+    background-color: #ffffff
+    padding: 5px
+    display: grid
+    grid-gap: 23px
+    grid-template-columns: auto auto
+
+    &:not(:first-child)
+      margin-top: 14px
+    p
+      font-size: 14px
+      font-weight: 400
+      line-height: 20px
+    ul
+      padding-left: 26px
+      margin-top: 25px
+      li
+        position: relative
+        color: $burg
+        font-size: 14px
+        font-weight: 500
+        line-height: 20px
+        &:not(:first-child)
+          margin-top: 20px
+        &::before
+          content: url(../img/icons/shape-small-brown.svg)
+          display: block
+          position: absolute
+          left: -26px
+          top: 0px
+        b
+          font-weight: 700
+  .info__item-pic
+    position: relative
+    max-width: 430px
+
+  .info__item-num
+    position: absolute
+    width: 90px
+    height: 90px
+    background-image: url(../img/shape-big-brown.png)
+    left: 88%
+    top: 50%
+    transform: translateY(-50%)
+    display: flex
+    justify-content: center
+    align-items: center
+    span
+      transform: rotate(-15deg)
+      color: #ffffff
+      font-family: $fo
+      font-size: 23px
+      font-weight: 700
+  .info__item-num--reverse
+    right: 88%
+    left: auto
+    span
+      transform: rotate(15deg)
+  .info__item-title
+    color: $burg
+    font-family: $fo
+    font-size: 24px
+    font-weight: 700
+    line-height: 30px
+    margin-bottom: 20px
+  .info__item-text
+    padding: 35px 20px 15px 42px
+
+  .info__item-pic--plansh
+    display: none
+  .info__item-pic--mob
+    display: none
+@media screen and ( max-width: 1080px )
+  .info
+    .info__item-text
+      padding: 30px 20px 15px 30px
+    .info__item-num
+      left: 85%
+    .info__item-num--reverse
+      right: 84%
+      left: auto
+
+@media screen and ( max-width: 768px )
+  .info
+    .info__item-pic--desc
+      display: none
+    .info__item-pic--plansh
+      display: block
+    .info__item-num
+      left: 75%
+    .info__item-num--reverse
+      right: 77%
+      left: auto
+    .info__item-text
+      padding: 20px 20px 15px 30px
+  .info__item ul li:not(:first-child)
+    margin-top: 10px
+@media screen and ( max-width: 650px )
+  .info
+    .info__item-pic--plansh
+      display: none
+    .info__item-pic--mob
+      display: block
+    .info__item
+      display: block
+    .info__item-pic
+      .info__item-num
+        display: none
+    .info__item-pic--mob
+      margin-bottom: 20px
+      max-width: 100%
+      text-align: center
+      .info__item-num
+        display: flex
+    .info__item-num--reverse
+      top: 20px
+      right: 30px
+
+@media screen and ( max-width: 475px )
+  .info
+    padding: 30px 0px 40px 0px
+    .info__item-text
+      padding: 20px 10px
+    .info__item-num
+      width: 68px
+      height: 68px
+      background-size: cover
+      span
+        font-size: 17px
+        line-height: 15px
+    .info__item-title
+      font-size: 20px
+      line-height: 24px
+
+@media screen and ( max-width: 375px )
+  .info
+    .info__item-text
+      padding: 15px 0px
+    .info__item-num--reverse
+      right: 10px
+/******section chat********/
+.chat
+  margin: 47px 0px
+.chat__banner
+  height: 197px
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 15px solid #ffffff
+  background-color: #ffffff
+  background-image: url(../img/chat-banner-bg.jpg)
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  display: flex
+  align-items: center
+  p
+    margin-left: 70px
+    color: #ffffff
+    font-family: $fo
+    font-size: 30px
+    font-weight: 700
+    line-height: 36px
+
+@media screen and ( max-width: 650px )
+  .chat
+    margin: 25px 0px
+  .chat__banner
+    p
+      font-size: 22px
+      margin-left: 30px
+      max-width: 160px
+      line-height: 26px
+@media screen and ( max-width: 375px )
+  .chat__banner
+    height: 115px
+    border: 5px solid #fff
+
+/*****stocks page******/
+.stocks
+  padding-bottom: 50px
+  .title
+    margin-bottom: 32px
+  .inner
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+  .title-text
+    max-width: 595px
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+    margin-right: 30px
+    span
+      color: #8e2a23
+      font-weight: 500
+      letter-spacing: -0.14px
+      text-decoration: underline
+      text-underline-position: under
+  .select-wrap
+    display: flex
+    align-items: center
+    label
+      font-family: $fo
+      font-size: 12px
+      font-weight: 500
+      text-transform: uppercase
+      margin: 0
+  .custom-select
+    margin-left: 16px
+    width: 380px
+  .wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 30px
+    margin-top: 35px
+
+.stocks__item
+  display: grid
+  grid-template-columns: 1fr 171px
+  grid-gap: 55px
+  border: 5px solid #ffffff
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  background-color: #fff
+  > div:nth-child(1)
+    padding: 14px 0px 10px 21px
+  p
+    font-size: 14px
+    font-weight: 400
+    line-height: 18px
+    margin-bottom: 16px
+  a
+    padding: 13px 40px 12px 18px
+    border: 1px solid $burg
+    background-color: #ffffff
+    color: $burg
+    display: inline-block
+    font-family: $fo
+    font-size: 12px
+    font-weight: 500
+    text-transform: uppercase
+    position: relative
+    transition: all .2s
+    &:hover
+      background-color: $burg
+      color: #ffffff
+      border-color: #ffffff
+      &::after
+        border-color: transparent transparent transparent #ffffff
+    &::after
+      position: absolute
+      content: ""
+      top: 13px
+      right: 10px
+      width: 0
+      height: 0
+      border: 5px solid transparent
+      border-color: transparent transparent transparent $burg
+.stocks__item-title
+  color: $burg
+  font-family: $fo
+  font-size: 28px
+  font-weight: 700
+  line-height: 28px
+  margin-bottom: 17px
+.stocks__item-pic, .stocks__item-pic--mob
+  background-color: $sand
+  position: relative
+  .item-pic__shape
+    display: block
+    width: 109px
+    height: 109px
+    background-image: url(../img/shape-big-brown.png)
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    position: absolute
+    left: -55px
+    top: 20px
+    display: flex
+    justify-content: center
+    align-items: center
+    span
+      color: #fff
+      font-family: $fo
+      font-size: 26px
+      font-weight: 400
+      text-transform: uppercase
+      transform: rotate(15deg)
+
+@media screen and ( max-width: 1250px )
+  .stocks
+    .select-wrap
+      flex-direction: column
+      align-items: flex-end
+    .title-text
+      max-width: 530px
+    .select-wrap
+      span
+        display: none
+    .custom-select
+      width: 250px
+      margin: 14px 0px 0px 0px
+
+.stocks__item-pic--mob
+  text-align: right
+  .item-pic__shape
+    right: 180px
+    left: auto
+    width: 85px
+    height: 85px
+    span
+      font-size: 19px
+@media screen and ( max-width: 1030px )
+  .stocks
+    .wrapper
+      grid-template-columns: 1fr
+      grid-gap: 8px
+
+@media only screen and (min-device-width: 650px) and (max-device-width: 769px)
+  .stocks__item
+    grid-gap: 80px
+
+@media screen and ( min-width: 600px )
+  .stocks__item-pic--mob
+    display: none
+
+@media screen and ( max-width: 600px )
+  .stocks__item
+    display: block
+
+  .stocks__item-pic
+    display: none
+  .stocks
+    padding-bottom: 15px
+    .wrapper
+      margin-top: 30px
+    .title
+      margin-bottom: 20px
+    .inner
+      flex-direction: column
+    .title-text
+      max-width: 100%
+      margin: 0px 0px 18px 0px
+    .select-wrap
+      width: 100%
+    .custom-select
+      width: 100%
+  .stocks__item>div:nth-child(1)
+    padding: 15px 12px 18px 12px
+  .stocks__item
+    p
+      margin: 15px 0px 20px 0px
+  .stocks__item-title
+    font-size: 25px
+    line-height: 28px
+@media screen and ( max-width: 500px )
+  .feedback__card-bg
+    .feedback__form, .feedback__contacts
+      border: 10px solid #fff
+
+@media screen and ( max-width: 415px )
+  .stocks__item-pic--mob
+    &::before
+      content: ''
+      display: block
+      padding-bottom: 42.1%
+    img
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      width: 100%
+      height: 100%
+@media screen and ( max-width: 340px )
+  .feedback__card-bg
+    .feedback__form, .feedback__contacts
+      border: 5px solid #fff
+
+@media screen and ( max-width: 320px )
+  .stocks__item-pic--mob .item-pic__shape
+    right: 158px
+
+/*******page contacts*************/
+.contacts
+  .title
+    text-align: center
+    margin-bottom: 34px
+  .wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 30px
+    position: relative
+.contacts__icon
+  width: 123px
+  height: 123px
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  background-image: url(../img/shape-big-brown.png)
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  display: flex
+  justify-content: center
+  align-items: center
+  svg
+    width: 40px
+    height: 40px
+    fill: $yellow
+.contacts__card
+  padding: 70px 130px 30px 35px
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 5px solid #ffffff
+  background-color: #ffffff
+  position: relative
+  z-index: 0
+  &::after
+    content: ''
+    display: block
+    width: 158px
+    height: 170px
+    background-image: url(../img/feedback-contact.png)
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center
+    position: absolute
+    right: 0
+    bottom: 0
+    z-index: -1
+  .card-quote
+    position: absolute
+    left: 5px
+    top: 5px
+    font-size: 20px
+    font-weight: 500
+    line-height: 20px
+    background-color: #fdcf5f
+    padding: 10px 15px
+.contacts__card-wrap
+  position: relative
+  margin-bottom: 27px
+  .inner
+    margin-left: 40px
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 30px
+    grid-row-gap: 3px
+  .inner-mail
+    margin-left: 40px
+    a:nth-child(1)
+      margin-right: 20px
+  span
+    margin-bottom: 20px
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+    display: block
+  svg
+    max-width: 28px
+    max-height: 28px
+    fill: $burg
+    position: absolute
+    left: 0
+    top: 43px
+  p
+    margin-left: 40px
+    font-family: $fo
+    font-size: 18px
+    font-weight: 700
+    line-height: 24px
+    small
+      font-size: 18px
+      font-weight: 300
+  a
+    font-family: $fo
+    font-size: 18px
+    font-weight: 700
+    line-height: 24px
+    color: #000000
+  .mb
+    margin-bottom: 10px
+
+.contacts__card-mess
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-column-gap: 40px
+  > div
+    position: relative
+    a
+      margin-left: 40px
+      font-family: $fo
+      font-size: 18px
+      font-weight: 700
+      line-height: 24px
+      color: #000000
+  span
+    margin-bottom: 24px
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+    display: block
+  svg
+    max-width: 28px
+    max-height: 28px
+    fill: $burg
+    position: absolute
+    left: 0px
+    top: 42px
+
+.contacts__map
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 10px solid #ffffff
+  background-color: #ffffff
+
+@media screen and ( max-width: 1250px )
+  .contacts .wrapper
+    grid-gap: 8px
+  .contacts__card
+    padding: 70px 94px 30px 15px
+  .contacts__card-wrap
+    .inner
+      grid-column-gap: 20px
+    .inner-mail
+      display: flex
+      flex-direction: column
+      a:nth-child(1)
+        margin: 4px 0px 0px 0px
+  .contacts__card-mess
+    grid-gap: 3px
+    grid-template-columns: auto 1fr
+    .hide-mob
+      display: none
+
+@media screen and ( max-width: 1050px )
+  .contacts__card
+    padding: 70px 10px 30px 10px
+  .contacts__card .card-quote
+    font-size: 16px
+    line-height: 20px
+  .contacts__icon
+    width: 82px
+    height: 82px
+    svg
+      width: 26px
+      height: 26px
+  .contacts__card-wrap
+    p
+      br
+        display: none
+@media screen and ( max-width: 768px )
+  .contacts__card
+    padding: 60px 10px 30px 5px
+    .card-quote
+      padding: 5px 7px
+  .contacts__card-wrap
+    margin-bottom: 20px
+    svg
+      top: 37px
+    .inner
+      grid-column-gap: 10px
+    a
+      font-size: 17px
+    span
+      margin-bottom: 15px
+  .contacts .title
+    text-align: left
+@media screen and ( max-width: 740px )
+  .contacts
+    .wrapper
+      display: block
+  .contacts__map
+    height: 400px
+    margin-top: 10px
+  .contacts__icon
+    bottom: 360px
+    top: auto
+    transform: translateX(-50%)
+
+@media screen and ( max-width: 425px )
+  .contacts__map
+    height: 230px
+  .contacts__icon
+    bottom: 190px
+  .contacts__card-wrap
+    p
+      font-size: 16px
+      small
+        font-size: 16px
+    a
+      font-size: 16px
+    svg
+      max-width: 24px
+  .contacts__card .card-quote
+    font-size: 14px
+  .contacts__card::after
+    width: 117px
+    height: 130px
+  .contacts .title
+    margin-bottom: 20px
+@media screen and ( max-width: 375px )
+  .contacts__card-wrap .inner
+    grid-template-columns: 1fr
+
+@media screen and ( max-width: 350px )
+  .contacts__card .card-quote
+    left: 0
+    font-size: 13px
+    padding: 5px
+  .contacts__card-wrap
+    p
+      margin-left: 33px
+  .contacts__card-wrap
+    .inner
+      margin-left: 33px
+/****section team****/
+.team
+  padding: 70px 0px
+  .title
+    text-align: center
+    margin-bottom: 28px
+  .wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 30px
+.team__card
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  background-color: #ffffff
+  padding: 24px 26px 24px 30px
+  display: grid
+  grid-template-columns: 1fr 174px
+  grid-gap: 30px
+  p
+    margin-bottom: 30px
+    font-size: 14px
+    font-weight: 700
+    line-height: 20px
+    br
+      display: none
+  ul
+    li
+      color: #322423
+      font-size: 14px
+      font-weight: 400
+      line-height: 16px
+      position: relative
+      padding-left: 26px
+      &:not(:first-child)
+        margin-top: 10px
+      &::after
+        content: url(../img/icons/shape-small-brown.svg)
+        display: block
+        position: absolute
+        left: 0px
+        top: 0
+.team__card-title
+  color: $burg
+  font-family: $fo
+  font-size: 22px
+  font-weight: 700
+  line-height: 24px
+  margin-bottom: 20px
+  br
+    display: none
+.team__card-pic
+  img
+    -webkit-box-shadow: -6px 6px 0px 0px rgba(231,167,17,1)
+    -moz-box-shadow: -6px 6px 0px 0px rgba(231,167,17,1)
+    box-shadow: -6px 6px 0px 0px rgba(231,167,17,1)
+
+@media screen and ( max-width: 1250px )
+  .team .wrapper
+    grid-gap: 8px
+@media screen and ( max-width: 1050px )
+  .team
+    padding: 50px 0px
+  .team__card
+    display: block
+    position: relative
+    p
+      br
+        display: block
+  .team__card-pic
+    position: absolute
+    width: 114px
+    height: 144px
+    top: 15px
+    right: 15px
+  .team__card-title
+    br
+      display: block
+
+@media screen and ( max-width: 768px )
+  .team .title
+    text-align: left
+
+@media screen and ( max-width: 730px )
+  .team
+    padding: 40px 0px
+
+    .wrapper
+      display: block
+  .team__card
+    &:not(:first-child)
+      margin-top: 10px
+
+@media screen and ( max-width: 425px )
+  .team__card
+    padding: 24px 15px 24px 20px
+  .team__card--hidden
+    display: none
+  .team
+    .title
+      margin-bottom: 20px
+@media screen and ( max-width: 360px )
+  .team__card-pic
+    height: 128px
+    width: 100px
+    right: 7px
+    top: 7px
+  .team__card
+    padding: 15px 10px 24px 15px
+
+@media screen and ( max-width: 340px )
+  .team__card-title
+    font-size: 20px
+  .team__card
+    p
+      font-size: 12px
+      line-height: 15px
+
+/*****section office****/
+.office
+  padding-bottom: 86px
+  .title
+    text-align: center
+    margin-bottom: 40px
+  .wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 30px
+.office__card
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 13px solid #ffffff
+  background-color: #ffffff
+  text-align: center
+
+@media screen and ( max-width: 1250px )
+  .office
+    padding-bottom: 15px
+
+@media screen and ( max-width: 768px )
+  .office .title
+    text-align: left
+
+@media screen and ( max-width: 700px )
+  .office
+    .wrapper
+      display: block
+  .office__card--hidden
+    display: none
+
+@media screen and ( max-width: 425px )
+  .office .title
+    margin-bottom: 20px
+
+/******reviews page********/   
+.reviews-banner
+  padding-bottom: 40px
+  .banner__card-pic
+    width: 100%
+    height: 345px
+    background-image: url(../img/reviews-pic.png)
+    background-size: contain
+    background-position: center
+    background-repeat: no-repeat
+    background-color: $sand
+    position: relative
+  .circle-icon
+    left: -22px
+  .banner__card-pic--mob
+    display: none
+.reviews-banner__card
+  display: grid
+  grid-template-columns: 1fr 430px
+  grid-column-gap: 33px
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 10px solid #ffffff
+  background-color: #ffffff
+  > div:nth-child(1)
+    padding: 30px 0px 35px 30px
+  .title
+    margin-bottom: 33px
+  p
+    color: #000000
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+    margin-bottom: 10px
+    span
+      color: $burg
+      font-weight: 500
+      text-decoration: underline
+      text-underline-position: under
+      font-weight: 700
+    strong
+      color: $burg
+      font-size: 18px
+      font-weight: 700
+
+@media screen and ( max-width: 1250px )
+  .reviews-banner
+    .banner__card-pic
+      background-size: cover
+  .reviews-banner__card
+    grid-template-columns: 1fr 228px
+
+@media screen and ( max-width: 640px )
+  .reviews-banner
+    .circle-icon
+      top: 100%
+      left: 50%
+      transform: translate(-50%, -50%)
+    .banner__card-pic
+      display: none
+    .banner__card-pic--mob
+      display: block
+      margin-bottom: 31px
+      height: 300px
+  .reviews-banner__card
+    display: block
+    >div:nth-child(1)
+      padding: 15px 5px 5px 5px
+    .title
+      margin-bottom: 17px
+
+/*******section reviews*****/
+.reviews
+  .wrapper
+    display: grid
+    grid-template-columns: 1fr 460px
+    grid-column-gap: 30px
+
+.reviews__block-head
+  margin-bottom: 50px
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  .title
+    margin: 0
+.reviews__block-link
+  color: #fff
+  font-family: $fo
+  font-size: 14px
+  font-weight: 700
+  line-height: 17px
+  letter-spacing: 1.4px
+  padding: 15px 17px
+  text-transform: uppercase
+  background-color: $yellow
+  outline: 1px solid #fff
+  outline-offset: -4px
+  transition: .3s
+  text-align: center
+  display: none
+  &:hover
+    background-color: $burg
+    color: #ffffff
+
+.reviews__item
+  display: grid
+  grid-template-columns: 72px 1fr
+  grid-gap: 30px
+  margin-bottom: 16px
+  .reviews__item-pic
+    width: 72px
+    height: 72px
+    background-color: #eadac3
+    position: relative
+    img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+  .item-pic--public
+    width: 100%
+    height: 100%
+  .item-pic--anonym
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    svg
+      width: 28px
+      height: 32px
+      fill: #ffffff
+  .item-head__title
+    color: $burg
+    font-family: $fo
+    font-size: 14px
+    font-weight: 700
+    text-transform: uppercase
+  .item-head__time
+    time
+      color: #000000
+      font-size: 14px
+      font-weight: 400
+
+.reviews__item-text
+  padding: 25px 37px 33px 25px
+  border: 1px solid #bfbfbf94
+  margin-top: 34px
+  background-color: #ffffff
+  p
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+.reviews__item-head
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding-top: 14px
+
+.reviews__pagination
+  margin: 25px 0px 0px 105px
+  span
+    display: inline-block
+  i
+    margin-left: 15px
+  a
+    font-family: $fo
+    font-size: 14px
+    font-weight: 700
+    color: $burg
+    width: 43px
+    height: 43px
+    display: flex
+    justify-content: center
+    align-items: center
+    &:hover
+      background-color: $burg
+      color: #ffffff
+  .current
+    a
+      background-color: $burg
+      color: #ffffff
+  .last
+    a
+      background-color: #ffffff
+      border: 1px solid $burg
+      &:hover
+        background-color: $burg
+    &.current
+      a
+        color: #fff
+        background-color: $burg
+.reviews__form
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border-bottom: 30px solid #ffffff
+  border-left: 20px solid #ffffff
+  border-right: 20px solid #ffffff
+  border-top: 30px solid #ffffff
+  background-color: $sand
+  padding: 37px 40px 37px 40px
+  p 
+    color: #fff
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+    margin-bottom: 20px
+  .title
+    margin: 0px 0px 35px 0px
+    color: #ffffff
+    position: relative
+    &::before
+      content: ''
+      display: block
+      width: 36px
+      height: 26px  
+      position: absolute
+      top: 50%
+      right: 0
+      transform: translateY(-50%)
+      background-image: url(../img/icons/handshake.svg)
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+  .rating__wrapper
+    padding: 12px
+    border: 1px solid $yellow
+    background-color: #ffffff
+  .form-input
+    width: 100%
+    border: 1px solid $yellow
+    background-color: #ffffff
+    font-size: 16px
+    font-weight: 400
+    line-height: 18px
+    outline: none
+    padding: 13px 18px
+    margin-bottom: 10px
+  textarea
+    font-size: 16px
+    font-weight: 400
+    line-height: 18px
+    padding: 17px
+    width: 100%
+    height: 176px
+    border: 1px solid $yellow
+    background-color: #ffffff
+  .field
+    display: flex
+    justify-content: space-between
+    position: relative
+    max-width: 190px
+  .inputfile-custom
+    width: 100%
+    margin: 0
+    position: relative
+    &::after
+      content: url(../img/icons/add-file-icon.svg)
+      width: 63px
+      height: 44px
+      background-color: $burg
+      position: absolute
+      right: 0
+      top: 0
+      display: flex
+      justify-content: center
+      align-items: center
+      cursor: pointer
+    span
+      color: $burg
+      font-family: $fo
+      font-size: 14px
+      padding: 14px 73px 13px 0px
+      font-weight: 500
+      line-height: 18px
+      display: block
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden
+  .btn
+    margin-top: 23px
+
+.reviews__form-wrap
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-top: 10px
+
+@media screen and ( max-width: 1250px )
+  .reviews
+    .wrapper
+      grid-template-columns: 1fr 380px
+  .reviews__form
+    padding: 20px 15px
+
+@media screen and ( max-width: 1090px )
+  .reviews
+    padding-top: 30px
+
+@media screen and ( max-width: 990px )
+  .reviews
+    .wrapper
+      display: block
+  .reviews__form
+    display: none
+  .reviews__block-head
+    .reviews__form
+      display: block
+      .title
+        margin-bottom: 20px
+
+  .reviews__block-link
+    display: block
+
+@media screen and ( max-width: 768px )
+  .reviews__block-head
+    .reviews__form
+      padding: 45px
+    .modal
+      max-width: 530px
+      &.active
+        padding: 50px 30px 30px 30px
+  .reviews__form-icon
+    display: none
+@media screen and ( max-width: 640px )
+  .reviews__block-head
+    .reviews__form
+      padding: 30px 23px
+      textarea
+        height: 100px
+      .form-input
+        font-size: 14px
+        padding: 12px 18px
+  .reviews__form-icon
+    display: block
+    position: absolute
+    right: 20px
+    top: 32px
+    svg
+      width: 36px
+      height: 36px
+      fill: #e8e7e7
+  .reviews__block-head
+    margin-bottom: 25px
+  .reviews__item-head
+    position: relative
+    padding-top: 25px
+    .item-head__time
+      position: absolute
+      top: 0px
+      left: 0px
+  .reviews__item
+    grid-template-columns: 48px 1fr
+    grid-gap: 12px
+    .reviews__item-pic
+      width: 48px
+      height: 48px
+    .item-head__time
+      time
+        font-size: 12px
+  .reviews__item-text
+    margin-top: 20px
+    padding: 17px 13px
+  .reviews__pagination
+    margin: 25px 0px 0px 0px
+    text-align: center
+
+@media screen and ( max-width: 500px )
+  .reviews__block-head
+    .reviews__form
+      border: 5px solid #ffffff
+      
+@media screen and ( max-width: 415px )
+  .reviews-banner
+    .banner__card-pic--mob
+      height: 210px
+  .reviews__block-head
+    .modal
+      max-width: 100%
+      &.active
+        padding: 50px 20px 30px 20px
+
+@media screen and ( max-width: 375px )
+  .reviews__block-head
+    .modal-content
+      width: 100%
+    .reviews__form
+      padding: 25px 15px
+      .field
+        max-width: 170px
+      .inputfile-custom
+        span
+          padding: 14px 50px 13px 0
+        &::after
+          width: 44px
+
+@media screen and ( max-width: 355px )
+  .reviews__pagination
+    a
+      width: 36px
+      height: 36px
+      font-size: 13px
+  .reviews__form 
+    .rating__wrapper
+      padding: 12px 10px
+    .inputfile-custom span     
+      font-size: 13px
+@media screen and ( max-width: 320px )
+  .reviews__item-head
+    .rating__group
+      position: absolute
+      right: 0
+      top: 3px
+
+  .reviews__block-head
+    .reviews__form
+      padding: 20px 10px 20px 10px
+      .title
+        margin-bottom: 10px
+      p 
+        margin-bottom: 10px
+    .modal
+      &.active
+        padding: 50px 10px 30px 10px
+
+
+/*******section-nav********/
+.section-nav
+  padding-bottom: 25px
+.section-nav__block
+  max-width: 690px
+  border: 1px solid $burg
+  background-color: #fdfbf6
+  padding: 30px 0px 30px 30px
+  background-image: url(../img/section-nav-bg.png)
+  background-position: right bottom
+  background-repeat: no-repeat
+  position: relative
+  z-index: 0
+  &::after
+    content: ''
+    display: block
+    width: 100%
+    height: 100%
+    background-image: url(../img/brown-rays.png)
+    background-size: cover
+    background-position: right
+    background-repeat: no-repeat
+    position: absolute
+    right: 0
+    bottom: 0
+    z-index: -1
+  p
+    font-size: 14px
+    font-weight: 700
+    margin-bottom: 28px
+  li
+    padding-left: 35px
+    position: relative
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      top: 6px
+      left: 0px
+      width: 23px
+      height: 1px
+      background-color: $burg
+
+    &:not(:first-child)
+      margin-top: 23px
+    a
+      color: $burg
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+
+@media screen and ( max-width: 1250px )
+  .section-nav
+    padding-bottom: 70px
+
+@media screen and ( max-width: 768px )
+  .section-nav__block
+    max-width: 100%
+    padding: 30px
+
+@media screen and ( max-width: 640px )
+  .section-nav__block
+    background-image: none !important
+    &::after
+      background-image: url(../img/brown-rays-mob.png)
+      background-size: contain
+      background-position: right bottom
+
+@media screen and ( max-width: 425px )
+  .section-nav__block
+    padding: 25px 17px
+  .section-nav
+    padding-bottom: 50px
+
+/*******service cards******/   
+.service-card
+  display: grid
+  grid-template-columns: 1fr 450px
+  grid-gap: 60px
+  margin-bottom: 15px
+  .caption
+    margin-bottom: 30px
+  p
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+    span
+      font-weight: 500
+      color: $burg
+      text-decoration: underline
+      text-underline-position: under
+
+.service-card__pic
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 5px solid #ffffff
+  position: relative
+  .card__icon
+    position: absolute
+    background-image: url(../img/shape-big-brown.png)
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    width: 90px
+    height: 90px
+    display: flex
+    justify-content: center
+    align-items: center
+    top: 50%
+    transform: translateY(-50%)
+    left: -45px
+    svg
+      max-width: 30px
+      height: 30px
+      fill: $yellow
+.service-card__pic--mob
+  display: none
+
+.service-card__text
+  padding: 40px 0px
+  border-bottom: 1px dashed $yellow
+
+.service-card__info
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-top: 50px
+  a
+    padding: 13px 40px 12px 18px
+    border: 1px solid $burg
+    background-color: transparent
+    color: $burg
+    display: inline-block
+    font-family: $fo
+    font-size: 12px
+    font-weight: 500
+    text-transform: uppercase
+    position: relative
+    transition: all .2s
+    &::after
+      position: absolute
+      content: ""
+      top: 13px
+      right: 10px
+      width: 0
+      height: 0
+      border: 5px solid transparent
+      border-color: transparent transparent transparent $burg
+    &:hover
+      background-color: $burg
+      color: #fff
+      &::after
+        border-color: transparent transparent transparent #ffffff
+  span
+    color: $burg
+    font-family: $fo
+    font-size: 24px
+    font-weight: 700
+    margin-left: 13px
+  .card__price
+    display: flex
+    align-items: center
+    svg
+      width: 20px
+      height: 20px
+      fill: $burg
+
+@media screen and ( max-width: 1250px )
+  .service-card
+    grid-template-columns: 1fr 350px
+    padding-bottom: 35px
+    border-bottom: 1px dashed $yellow
+    margin: 0
+    &:not(:first-child)
+      margin-top: 34px
+  .service-card__text
+    padding: 0px
+  .service-card__text
+    border: none
+
+@media screen and ( max-width: 768px )
+  .service-card
+    grid-template-columns: 1fr 230px
+  .service-card__pic
+    border: 10px solid #ffffff
+    max-height: 350px
+  .service-card__info
+    margin-top: 30px
+
+@media screen and ( max-width: 640px )
+  .service-card
+    display: block
+    padding-bottom: 25px
+    .caption
+      margin-bottom: 25px
+  .service-card__pic
+    display: none
+  .service-card__pic--mob
+    display: block
+    height: 250px
+    margin-bottom: 25px
+    border: 5px solid #fff
+    .card__icon
+      width: 60px
+      height: 60px
+      left: 50%
+      transform: translateX(-50%)
+      top: auto
+      bottom: -20px
+      svg
+        max-width: 18px
+        max-height: 20px
+  .service-card__info
+    margin-top: 25px
+
+@media screen and ( max-width: 425px )
+  .service-card__pic--mob
+    height: 200px
+
+@media screen and ( max-width: 320px )
+  .service-card__info
+    a
+      padding: 13px 23px 12px 10px
+      &::after
+        right: 2px
+        top: 14px
+    span
+      font-size: 20px
+
+/*******desc-card********/
+
+.desc-card
+  display: grid
+  grid-template-columns: 1fr 450px
+  grid-gap: 70px
+  margin-bottom: 15px
+  .caption
+    margin-bottom: 30px
+  p
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+    margin-bottom: 20px
+    span
+      color: $burg
+      font-weight: 500
+      text-decoration: underline
+      text-underline-position: under
+  .quote
+    color: $burg
+    font-size: 14px
+    line-height: 20px
+    font-weight: 500
+    border: 1px dashed $burg
+    padding: 10px 15px
+  .quote--warning
+    border: 1px dashed $yellow
+    padding: 20px 70px 20px 25px
+    position: relative
+    .quote-icon
+      width: 30px
+      height: 30px
+      position: absolute
+      top: 50%
+      right: 20px
+      transform: translateY(-50%)
+.desc-card__text
+  padding-top: 30px
+.desc-card__text-list
+  padding-left: 26px
+  li
+    position: relative
+    color: $burg
+    font-size: 14px
+    font-weight: 500
+    line-height: 20px
+    &:not(:first-child)
+      margin-top: 20px
+    &::before
+      content: url(../img/icons/shape-small-brown.svg)
+      display: block
+      position: absolute
+      left: -26px
+      top: 0px
+    b
+      font-weight: 700
+
+.desc-card__selection
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  background-color: #ffffff
+  padding: 10px 15px
+  display: inline-block
+  p
+    margin: 0
+.desc-card__pic
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 10px solid #ffffff
+  background-color: #ffffff
+  position: relative
+.desc-card__pic--mob
+  display: none
+
+.desc-card__document
+  position: relative
+  background-color: #fff
+  padding: 20px
+  box-shadow: 0 2px 5px 1px #d6d1b2
+
+  .document-icon
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    border-radius: 50%
+    width: 44px
+    height: 44px
+    box-shadow: 0 12px 21px rgba(93, 92, 92, 0.41)
+    background-color: #ffffff
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    svg
+      width: 28px
+      height: 17px
+      fill: $burg
+  .document-item
+    display: block
+  .document-block
+    &:nth-child(2)
+      margin-bottom: 20px
+
+.desc-card__document--mob
+  display: none
+
+.desc-card__banner
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  padding: 30px 20px 30px 55px
+  border: 5px solid #ffffff
+  background-color: #8e2a23
+  li
+    color: #ffffff
+    font-family: $fo
+    font-size: 16px
+    font-weight: 700
+    white-space: nowrap
+    position: relative
+    &:not(:first-child)
+      margin-top: 15px
+    &::before
+      content: ''
+      display: block
+      width: 15px
+      height: 15px
+      background-image: url(../img/icons/shape-white.svg)
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      position: absolute
+      top: 0px
+      left: -25px
+
+.document-angle
+  position: absolute
+  .document-angle--mob
+    display: none
+.document-angle--t_r
+  top: 0
+  right: 0
+.document-angle--t_l
+  top: 0
+  left: 0
+.document-angle--b_r
+  bottom: 0
+  right: 0
+.document-angle--b_l
+  bottom: 0
+  left: 0
+
+@media screen and ( max-width: 1250px )
+  .desc-card
+    grid-gap: 35px
+    grid-template-columns: 1fr 350px
+    &:not(:last-child)
+      margin-bottom: 40px
+  .desc-card__text
+    padding: 0
+
+@media screen and ( max-width: 768px )
+  .desc-card
+    grid-template-columns: 1fr 230px
+    .caption
+      margin-bottom: 25px
+    p
+      margin-bottom: 15px
+  .desc-card__text
+    ul
+      li
+        &:not(:first-child)
+          margin-top: 10px
+  .desc-card__pic
+    height: 100%
+    img
+      height: 100%
+      width: 100%
+      object-fit: cover
+  .desc-card__banner
+    width: 180px
+    padding: 30px 10px 30px 45px
+    li
+      white-space: normal
+      font-size: 14px
+      line-height: 20px
+  .desc-card__document
+    margin: 30px 0px
+    display: flex
+    align-items: center
+    .document-block:nth-child(2)
+      margin: 0
+
+  .document-angle
+    position: absolute
+    .document-angle--mob
+      display: block
+    .document-angle--desc
+      display: none
+  .desc-card__selection
+    p
+      margin: 0
+  .desc-card--modal
+    display: block
+    .modal
+      max-width: 450px
+      padding: 50px 30px 30px 30px
+
+  .desc-card__document--desctop
+    display: none
+  .desc-card__document--mob
+    box-shadow: none
+    padding: 0
+    background: none
+    align-items: flex-start
+  .document-block__wrap
+    position: relative
+    background-color: #fff
+    padding: 10px
+    box-shadow: 0 2px 5px 1px #d6d1b2
+    &:nth-child(1)
+      margin-right: 30px
+    .document-block
+      text-align: center
+  .document-angle--t_l
+    top: -3px
+    left: -3px
+  .document-angle--t_r
+    top: -3px
+    right: -3px
+  .document-angle--b_l
+    bottom: -3px
+    left: -3px
+  .document-angle--b_r
+    bottom: -3px
+    right: -3px
+
+@media screen and ( max-width: 640px )
+  .desc-card
+    display: block
+  .desc-card__pic--desctop
+    display: none
+  .desc-card__pic--mob
+    display: block
+    width: 350px
+    height: 250px
+    margin: 0px auto 30px auto
+    img
+      object-position: top
+  .desc-card__selection
+    br
+      display: none
+  .desc-card__banner
+    width: 90%
+
+@media screen and ( max-width: 550px )
+  .desc-card__document--mob
+    flex-direction: column
+    align-items: center
+  .document-block__wrap:nth-child(1)
+    margin: 0px 0px 20px 0px
+
+@media screen and ( max-width: 425px )
+  .desc-card__pic--mob
+    width: 100%
+
+@media screen and ( max-width: 375px )
+  .desc-card__pic--mob
+    height: 200px
+
+  .desc-card__banner
+    width: 83%
+
+  .desc-card__document
+    padding: 10px
+/******section price*****/
+.price
+  padding-bottom: 35px
+  p
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+  .wrapper
+    display: grid
+    grid-template-columns: 1fr 450px
+    grid-gap: 60px
+  table
+    margin-top: 30px
+    width: 100%
+    box-shadow: 0 2px 5px 1px #d6d1b2
+    thead
+      tr
+        background-color: $burg
+      th
+        color: #ffffff
+        font-size: 14px
+        font-weight: 500
+        &:nth-child(1)
+          padding: 18px 10px 18px 20px
+        &:nth-child(2)
+          padding: 18px 10px 18px 3px
+          cursor: pointer
+          text-align: center
+        &:nth-child(3)
+          padding: 18px 10px 18px 15px
+          cursor: pointer
+          text-align: center
+        svg
+          width: 8px
+          height: 12px
+        span
+          margin-left: 7px
+    tbody
+      td
+        font-size: 14px
+        font-weight: 400
+        line-height: 20px
+        &:nth-child(1)
+          padding: 17px 10px 17px 20px
+        &:not(:first-child)
+          text-align: center
+          padding: 17px 20px
+          border-left: 1px solid #eadac3
+      tr
+        &:nth-child(odd)
+          background-color: #fff
+        &:nth-child(even)
+          background-color: rgba(246, 239, 230, 0.5)
+          border-top: 1px solid #eadac3
+          border-bottom: 1px solid #eadac3
+.price__pic
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 10px solid #ffffff
+  background-color: #ffffff
+
+.price__title
+  color: $burg
+  font-family: $fo
+  font-size: 20px
+  font-weight: 700
+  margin-bottom: 30px
+
+.price__calc
+  display: flex
+  justify-content: space-between
+  margin: 30px 0px 45px 0px
+  .calc-controls
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 15px
+  .custom-select
+    width: 182px
+  .select-selected
+    padding: 12px 38px 12px 18px
+  .calc-result
+    width: 278px
+    background-color: $burg
+    padding: 20px 10px
+    display: flex
+    justify-content: center
+    span
+      color: #ffffff
+      font-size: 16px
+      font-weight: 500
+      line-height: 20px
+  .calc-result__sum
+    color: $yellow
+    font-family: $fo
+    font-size: 24px
+    font-weight: 700
+    line-height: 36px
+  .calc-result__term
+    color: $yellow
+    font-family: $fo
+    font-size: 24px
+    font-weight: 700
+    line-height: 36px
+  .divider
+    margin: 0px 25px 0px 20px
+    height: 100%
+    width: 1px
+    background-color: rgba(255, 255, 255, .5)
+
+@media screen and ( max-width: 1250px )
+  .price
+    .wrapper
+      display: block
+  .price__pic
+    display: none
+  .price__calc
+    justify-content: flex-start
+    .calc-result
+      margin-left: 30px
+
+@media screen and ( max-width: 768px )
+  .price__calc
+    justify-content: space-between
+    .calc-result
+      margin: 0
+      width: 300px
+
+@media screen and ( max-width: 740px )
+  .price__calc
+    flex-direction: column
+    align-items: center
+    .calc-result
+      margin-top: 20px
+  .price table thead th span
+    display: none
+
+@media screen and ( max-width: 640px )
+  .price table tbody td:not(:first-child)
+    padding: 5px
+
+@media screen and ( max-width: 425px )
+  .price__calc
+    .calc-controls
+      grid-column-gap: 10px
+      grid-row-gap: 15px
+      width: 100%
+    .custom-select
+      width: 100%
+    .calc-result
+      width: 100%
+
+@media screen and ( max-width: 375px )
+  .price__calc
+    .select-selected
+      padding: 12px 30px 12px 10px
+      &::after
+        right: 7px
+  .price
+    table
+      thead
+        th
+          font-size: 12px
+
+@media screen and ( max-width: 350px )
+  .price
+    table
+      thead
+        th:nth-child(1)
+          padding: 14px 8px 14px 10px
+        th
+          font-size: 10px
+      tbody
+        td:nth-child(1)
+          padding: 14px 8px 14px 10px
+  .price__calc
+    .select-items div, .select-selected
+      font-size: 12px
+    .select-items div
+      padding: 6px 5px 6px 10px
+/*****section consult*/
+.consult
+  padding-bottom: 40px
+  .wrapper
+    display: grid
+    grid-template-columns: 1fr 450px
+    grid-column-gap: 60px
+
+.consult__title
+  margin-bottom: 40px
+  color: $burg
+  font-family: $fo
+  font-size: 20px
+  font-weight: 700
+.consult__tabs
+  padding: 26px
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  background-color: #ffffff
+  .feedback__contacts
+    border: none
+    box-shadow: none
+  .feedback__form
+    border: none
+    box-shadow: none
+    .field
+      max-width: 100%
+    .inputfile-custom span
+      width: 84%
+  .tabs-nav
+    display: flex
+  .tabs-nav__item
+    cursor: pointer
+    padding: 13px 25px 8px 25px
+    color: $burg
+    font-family: $fo
+    font-size: 16px
+    font-weight: 700
+    line-height: 20px
+    text-decoration: underline
+    text-underline-position: under
+    &.active
+      background-color: $sand
+      text-decoration: none
+  .tabs-content__item
+    display: none
+    &.active
+      display: block
+
+.consult__pic
+  position: relative
+  box-shadow: 0 2px 5px 1px #d6d1b2
+  border: 10px solid #ffffff
+  text-align: center
+
+@media screen and ( max-width: 1250px )
+  .consult
+    .wrapper
+      grid-template-columns: 1fr 350px
+      grid-column-gap: 30px
+
+@media screen and ( max-width: 1024px )
+  .consult
+    .wrapper
+      display: block
+  .consult__pic
+    display: none
+  .consult__tabs
+    max-width: 600px
+    margin: 0 auto
+
+@media screen and ( max-width: 768px )
+  .consult__tabs
+    max-width: 100%
+    .feedback__form
+      border: none
+
+    .feedback__contacts
+      border: none
+
+@media screen and ( max-width: 640px )
+  .consult__tabs
+    padding: 5px
+    max-width: 100%
+    .tabs-nav__item
+      padding: 8px 10px 10px 10px
+      font-size: 14px
+    .feedback__form
+      padding: 15px
+    .feedback__contacts
+      padding: 15px
+
+@media screen and ( max-width: 375px )
+  .consult__tabs
+    .tabs-nav__item
+      font-size: 12px
+      padding: 6px 7px 8px 7px
+    .feedback__form
+      padding: 10px
+    .feedback__contacts
+      padding: 10px
+
+/*****footer*****/   
+
+@import footer
+/****end footer**/
