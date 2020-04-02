@@ -1,14 +1,13 @@
 .header__menu-bar>ul {
 	overflow-y: scroll;
 }
-.header__menu-bar>ul::-webkit-scrollbar {
+.header__menu-bar>ul::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
     width: 6px;
     background-color: #8e2a23;
 } 
-.header__menu-bar>ul::-webkit-scrollbar-thumb {
+.header__menu-bar>ul::-webkit-scrollbar-thumb, .header__menu-sub::-webkit-scrollbar-thumb {
     background-color: #e7a711;
 }
-
 @media (max-height: 600px), (orientation: landscape) {
 	.header__menu-bar>ul {
 	    height: 440px;
