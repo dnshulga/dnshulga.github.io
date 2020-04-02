@@ -1,6 +1,8 @@
-.header__menu-bar>ul {
+.header__menu-bar > ul {
 	overflow-y: scroll;
 	position: relative;
+    padding-right: 0;
+    margin-right: 40px;
 }
 ul.no-scroll::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
     display: none;
@@ -14,10 +16,6 @@ ul.no-scroll::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
 } 
 .header__menu-bar>ul::-webkit-scrollbar-thumb, .header__menu-sub::-webkit-scrollbar-thumb {
     background-color: #f9f9f9;
-}
-.header__menu-bar ul {
-    padding-right: 0;
-    margin-right: 40px;
 }
 .chevron {
 	height: 10px;
@@ -41,17 +39,26 @@ ul.no-scroll::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
     fill: #fff;
     transform: rotate(90deg);
 }
-.header__menu-bar .header__menu-sub {
+.header__menu-bar ul .menu-bar__sub-link .header__menu-sub, .header__menu-bar ul .menu-bar__sub-link.active .header__menu-sub {
     max-height: 400px;
     padding: 35px 20px 35px 27px;
     display: none;
     z-index: 1;
+    overflow-y: auto;
+    border-bottom: 4px solid #ffc000;
 }
 .header__menu-bar {
     height: 100%;
 }
-.header__menu-sub {
-    border-bottom: 4px solid #ffc000;
+.header__menu-bar ul li {
+    position: relative;
+}
+.header__menu-bar ul li>a:hover {
+    background-color: initial;
+    color: #FFF;
+}
+.header__menu-bar ul .menu-bar__sub-link>:hover svg {
+    fill: #fff;
 }
 @media (max-height: 600px), (orientation: landscape) {
 	.header__menu-bar>ul {
@@ -64,8 +71,23 @@ ul.no-scroll::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
         height: 100%;
     } 
 }
-@media (min-width: 1500px) {
+@media (min-width: 1600px) {
     .header__menu-bar {
         height: auto;
+    }
+}
+
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    .header__menu-bar>ul::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
+        display: none;
+    } 
+    .header__menu-bar {
+        height: auto;
+    }
+}
+@media (min-width: 350px) and (max-width: 450px) {
+    .header__menu-bar > ul {
+        height: 80%;
     }
 }

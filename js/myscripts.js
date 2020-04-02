@@ -6,29 +6,42 @@ $(document).ready(function(){
 	}
 	else{
 	 	$('.chevron').hide();
-	 	//('.header__menu-bar>ul').addClass('no-scroll');
+	 	$('.header__menu-bar>ul').addClass('no-scroll');
 	}
 
 
 	//scrolling submenus
 	$('.menu-bar__sub-link').each(function(){
+		
 		var flag = false;
 
 		$(this).click(function(){
 
-		
+
+			var $part = $(this);
 			if (!flag) {
-				$(this).find('.header__menu-sub').slideDown();
-				$(this).get(0).scrollIntoView();
-				$('.header__menu-bar>ul').addClass('no-scroll');
+
+				$('.header__menu-sub').each(function(){
+					$(this).slideUp('fast');
+				});
+				$part.find('.header__menu-sub').slideDown();
+
+				//$(this).get(0).scrollIntoView();
+				var pos = $(this).position().top;
+
+				$('.header__menu-bar > ul').scrollTop(pos);
+
+				$('.header__menu-bar > ul').addClass('no-scroll');
 				$('.chevron').addClass('no-chevron');
+
 
 				flag = true;
 			}	
 			else {
 				$('.header__menu-sub').slideUp();
-				$(this).get(0).scrollIntoView();
-				$('.header__menu-bar>ul').removeClass('no-scroll');
+
+				//$(this).get(0).scrollIntoView();
+				$('.header__menu-bar > ul').removeClass('no-scroll');
 				$('.chevron').removeClass('no-chevron');
 
 				flag = false;
