@@ -11,6 +11,6 @@
 
 @media (max-height: 600px), (orientation: landscape) {
 	.header__menu-bar>ul {
-	    height: 420px;
+	    height: 440px;
 	}
 }
