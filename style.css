@@ -2,17 +2,16 @@
 	overflow-y: scroll;
 	position: relative;
 }
+ul.no-scroll::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
+    display: none;
+}
 .header__menu-bar>ul::-webkit-scrollbar, .header__menu-sub::-webkit-scrollbar {
     width: 5px;
     background-color: transparent; /*#8e2a23;*/
 } 
 .header__menu-bar>ul::-webkit-scrollbar-thumb, .header__menu-sub::-webkit-scrollbar-thumb {
     background-color: #f9f9f9;
-}/*
-.header__menu-bar>ul::-webkit-scrollbar-button {
-	background-color: #fff;
-	color: #000;
-}*/
+}
 .header__menu-bar ul {
     padding-right: 0;
     margin-right: 40px;
@@ -39,8 +38,31 @@
     fill: #fff;
     transform: rotate(90deg);
 }
+.header__menu-bar .header__menu-sub {
+    max-height: 400px;
+    padding: 35px 20px 35px 27px;
+    display: none;
+    z-index: 1;
+}
+.header__menu-bar {
+    height: 100%;
+}
+.header__menu-sub {
+    border-bottom: 4px solid #ffc000;
+}
 @media (max-height: 600px), (orientation: landscape) {
 	.header__menu-bar>ul {
-	    height: 440px;
+	    height: 88%;
 	}
+}
+
+@media screen and (max-height: 700px) {
+    .header__menu-bar {
+        height: 100%;
+    } 
+}
+@media (min-width: 1500px) {
+    .header__menu-bar {
+        height: auto;
+    }
 }

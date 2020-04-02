@@ -6,14 +6,30 @@ $(document).ready(function(){
 	}
 	else{
 	 	$('.chevron').hide();
+	 	//('.header__menu-bar>ul').addClass('no-scroll');
 	}
 
 
 	//scrolling submenus
-	$('.menu-bar__sub-link').click(function(){
-		var pos = $('.header__menu-bar>ul').position(); //find an offset
+	$('.menu-bar__sub-link').each(function(){
+		var flag = false;
 
-		$(this).get(0).scrollIntoView();
+		$(this).click(function(){
+
+		
+			if (!flag) {
+				$(this).find('.header__menu-sub').slideDown();
+				$(this).get(0).scrollIntoView();
+				$('.header__menu-bar>ul').addClass('no-scroll');
+				flag = true;
+			}	
+			else {
+				$('.header__menu-sub').slideUp();
+				$(this).get(0).scrollIntoView();
+				$('.header__menu-bar>ul').removeClass('no-scroll');
+				flag = false;
+			}
+		});
 	});
 
 
