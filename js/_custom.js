@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	var lessHeader = function lessHeader() {
-		if (window.pageYOffset > 50) headerComp.classList.add('less');
+		if (window.pageYOffset > 0) headerComp.classList.add('less');
 		else headerComp.classList.remove('less');
 	};
 	lessHeader();
@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /*** the modal form*/
 	  let 	modal = document.getElementById("modal-form-js"),
-			modalContent = modal.querySelector('.modal-form__content'),
-			modalTitle = modal.querySelector('.modal-form__title'),
+			modalContent = document.querySelector('.modal-form__content'),
+			modalTitle = document.querySelector('.modal-form__title'),
 			showBtn = document.querySelectorAll(".open-modal-js"),
 
 			modalDemo = document.getElementById("modal__demo-form-js"),
@@ -133,7 +133,11 @@ document.addEventListener("DOMContentLoaded", function () {
   };
  
 
-
+  $(".sidebar__field-btn--js").on('click', function() { 		
+	$(".sidebar__field-list").slideUp(200);			
+	$(this).closest('.sidebar .sidebar__field').find('.sidebar__field-list').stop().slideToggle(200);
+	$(this).toggleClass('active').parent().siblings().children().removeClass('active');
+	});
 
 
 

@@ -120,11 +120,9 @@ body
   .btn 
     a 
       font-size: 16px
-
-
-
 .tt-up
   text-transform: uppercase
+
 /********header********/
 .header
   display: block
@@ -133,7 +131,6 @@ body
   position: fixed
   top: 0
   left: 0
-  width: 100% 
   &.less
     box-shadow: 0 0 46px rgba(0, 0, 0, 0.11)
     background-color: #ffffff 
@@ -209,6 +206,40 @@ body
       transform: translateY(-8px) rotate(-45deg)
 .header__menu-subtstrate
   display: none
+
+.header-base
+  height: 105px
+  &.less .header__logo
+    padding: 0
+  .container
+    height: 100%
+    max-width: 1185px
+    padding: 0px 45px 0px 20px
+  .header__logo
+    color: #333333
+    font-size: 21px
+    font-weight: 700
+    text-transform: uppercase
+    padding: 0
+    margin: 0px 0px 0px 18px
+    &::after
+      display: none
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      top: 50%
+      left: -18px
+      transform: translateY(-50%)
+      width: 55px
+      height: 54px
+      background-color: #ffed26
+      z-index: -1
+
+  .header__inner 
+    .btn
+      margin-left: 160px
+
 @media screen and ( max-width: 1600px )
   .header__inner 
     .btn
@@ -302,6 +333,45 @@ body
   .header__inner 
     &.active
       width: 90%  
+
+
+@media screen and (max-width: 1367px)
+  .header-base
+    height: 80px
+    .container
+      padding: 0px 20px
+
+@media screen and (max-width: 1140px)
+  .header-base 
+    .header__inner 
+      .btn
+        margin: 50px auto 0px auto
+
+@media screen and (max-width: 1100px)
+  .header-base 
+    .header__logo
+      max-width: 100%
+    .header__inner
+      top: 80px
+      height: calc(100vh - 80px)
+    .header__menu-subtstrate.active
+      top: 80px
+
+@media screen and (max-width: 360px)  
+  .header-base 
+    height: 60px
+    .header__inner
+      top: 60px
+      height: calc(100vh - 60px)    
+    .header__logo
+      font-size: 18px
+      margin: 0 0 0 10px
+      &::before
+        width: 45px
+        height: 45px
+        left: -10px
+
+
 /*****full page*******/   
 .section
   padding-top: 105px
@@ -1937,3 +2007,279 @@ body
         font-size: 18px
   .modal-form__title
     font-size: 22px
+
+
+
+/*******page base*******/
+.banner
+  margin-top: 105px
+  background-image: linear-gradient(-268deg, #fc76b3 0%, #facd68 100%)
+  height: 240px
+  .container
+    max-width: 1185px
+    display: flex
+    align-items: center
+    height: 100%
+.banner__link
+  margin-right: 125px
+  font-size: 17px
+  line-height: 49.33px
+  text-decoration: underline
+  text-underline-position: under
+  svg 
+    margin-right: 13px
+
+.banner__inner
+  display: flex
+  align-items: center
+.banner__text
+  margin-left: 75px
+  b 
+    color: #333333
+    font-size: 42px
+    font-weight: 700
+    text-transform: uppercase
+    line-height: 54.68px
+  p
+    font-size: 37px
+    margin-top: 15px
+
+@media screen and ( max-width: 1367px )
+  .banner
+    margin-top: 80px
+
+@media screen and ( max-width: 1140px )
+  .banner
+    height: 140px
+    padding: 20px 0px
+  .banner__inner
+    height: 100%
+  .banner__pic
+    img 
+      height: 100%
+  .banner__text
+    margin-left: 40px
+    b 
+      font-size: 32px
+      line-height: 40px
+    p 
+      font-size: 26px
+      margin-top: 10px
+
+@media screen and ( max-width: 360px )
+  .banner
+    margin-top: 80px
+/*******page***********/
+.page
+  padding: 65px 0px 170px 0px
+  .container
+    max-width: 1185px
+    display: grid
+    grid-template-columns: minmax(235px, max-content) 1fr
+    grid-gap: 40px   
+  .content
+    .caption 
+      margin-bottom: 50px
+      font-size: 38px
+      font-weight: 700
+      line-height: 42px
+      span 
+        font-weight: 400
+    p 
+      font-size: 21px
+      font-weight: 400
+      line-height: 29.17px
+      margin-bottom: 40px
+.sidebar
+  p 
+    color: #333333
+    font-size: 21px
+    font-weight: 700
+    margin-bottom: 30px
+    position: relative
+    padding-right: 22px
+    &.current
+      &::after
+        content: ""
+        display: block
+        width: 17px
+        height: 20px
+        background-image: url(../img/icons/arrow-yellow.svg)
+        background-position: center
+        background-repeat: no-repeat
+        background-size: contain
+        position: absolute
+        top: 0
+        right: 0px    
+    span 
+      background-image: linear-gradient(-43deg, #b04aff 0%, #30dad4 100%)
+      background-clip: text
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      font-size: 21px
+      font-weight: 700
+      margin-right: 5px
+  .sidebar__field
+    &:not(:first-child)
+      margin-top: 75px
+  li 
+    list-style-type: none
+
+    &:before 
+      content: '\2014'
+      margin-right: 5px
+    &:not(:first-child)
+      margin-top: 20px
+    a
+      font-size: 17px
+      transition: all .2s
+      &:hover
+        color: #30bbcb
+
+.content__footer
+  max-width: 545px
+  margin: 70px auto 0px auto
+
+.content__feedback
+  border-radius: 15px 15px 15px 12px
+  background-color: #f8f8f8
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 8px 35px 8px 30px
+  span 
+    color: #333333
+    font-size: 21px
+    font-weight: 700
+.content__switch
+  display: flex
+  align-items: center
+  button
+    width: 125px
+    height: 67px
+    outline: none
+    transition: all .2s
+    &:hover
+      box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,0.46)
+    div 
+      display: flex
+      align-items: center
+      justify-content: center
+    span 
+      margin-right: 17px
+.content__switch-false
+  border-radius: 33px 0 0 33px
+  background-color: #fff4f4
+  background-image: linear-gradient(-63deg, #ff549c 0%, #dac4bd 100%)
+
+.content__switch-true
+  border-radius: 0 33px 33px 0
+  background-color: #fff4f4
+  background-image: linear-gradient(-63deg, #00f7a7 0%, #04f5fd 100%)
+
+.content__footer-nav
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 0px 46px
+  margin-top: 48px
+  a 
+    color: #848484
+    font-size: 17px
+    font-weight: 400
+    line-height: 20px
+    position: relative
+.content__footer-prev
+  &::after
+    content: url(../img/icons/arrow-prev.svg)
+    display: block
+    position: absolute
+    left: -20px
+    top: 50%
+    transform: translateY(-50%)
+.content__footer-next
+  &::after
+    content: url(../img/icons/arrow-next.svg)
+    display: block
+    position: absolute
+    right: -20px
+    top: 50%
+    transform: translateY(-50%)    
+
+@media screen and ( max-width: 900px )
+  .page
+    padding: 30px 0 70px 0
+    .container
+      display: block
+    .content 
+      .caption
+        font-size: 28px
+        line-height: 32px
+        margin-bottom: 30px
+      p 
+        font-size: 18px
+        margin-bottom: 20px
+
+  .sidebar
+    margin-bottom: 50px
+    .sidebar__field:not(:first-child)
+      margin-top: 30px
+    p 
+      margin-bottom: 0px
+      display: inline-block
+      &.active
+        margin-bottom: 20px
+    li:not(:first-child)
+      margin-top: 10px
+  .sidebar__field
+    ul 
+      display: none
+
+@media screen and ( max-width: 768px )
+  .banner__link
+    margin-right: 40px
+
+@media screen and ( max-width: 700px )
+  .banner__link
+    display: none
+
+@media screen and ( max-width: 600px )   
+  .banner__text 
+    b 
+      font-size: 20px
+    p 
+      font-size: 18px
+      margin-top: 0
+  .banner
+    height: 120px
+
+  .content__feedback
+    flex-direction: column
+    span 
+      font-size: 18px
+      margin-bottom: 20px
+      text-align: center
+      br 
+        display: none
+  .content__switch 
+    button
+      width: 80px
+      height: 60px
+      span
+        display: none
+  
+
+@media screen and ( max-width: 375px )   
+  .content__feedback 
+    span
+      font-size: 16px
+  .content__footer-nav
+    padding: 0px 15px
+  .page .content .caption
+    font-size: 24px
+
+@media screen and ( max-width: 360px )   
+  .banner__text
+    margin-left: 20px
+    b 
+      font-size: 18px
